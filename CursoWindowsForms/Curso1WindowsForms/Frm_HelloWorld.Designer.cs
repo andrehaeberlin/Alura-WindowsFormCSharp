@@ -48,7 +48,7 @@
             // Btn_Sair
             // 
             this.Btn_Sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Sair.Location = new System.Drawing.Point(250, 265);
+            this.Btn_Sair.Location = new System.Drawing.Point(247, 256);
             this.Btn_Sair.Name = "Btn_Sair";
             this.Btn_Sair.Size = new System.Drawing.Size(150, 23);
             this.Btn_Sair.TabIndex = 1;
@@ -72,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_ConteudoLabel.Location = new System.Drawing.Point(34, 81);
             this.Txt_ConteudoLabel.Name = "Txt_ConteudoLabel";
-            this.Txt_ConteudoLabel.Size = new System.Drawing.Size(366, 20);
+            this.Txt_ConteudoLabel.Size = new System.Drawing.Size(363, 20);
             this.Txt_ConteudoLabel.TabIndex = 3;
             // 
             // Frm_HelloWorld
@@ -80,7 +80,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(412, 300);
+            this.ClientSize = new System.Drawing.Size(409, 291);
             this.Controls.Add(this.Txt_ConteudoLabel);
             this.Controls.Add(this.Btn_ModificaLabel);
             this.Controls.Add(this.Btn_Sair);
