@@ -67,6 +67,16 @@ namespace CursoWindowsForms
 
 
         }
+
+        private void Lbl_Resultado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Senha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     

@@ -58,6 +58,12 @@
     <Compile Include="Curso1WindowsForms\Frm_DemonstracaoKey.Designer.cs">
       <DependentUpon>Frm_DemonstracaoKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_DemonstracaoKey_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_DemonstracaoKey_UC.Designer.cs">
+      <DependentUpon>Frm_DemonstracaoKey_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Curso1WindowsForms\Frm_HelloWorld.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,30 @@
     </Compile>
     <Compile Include="Curso1WindowsForms\Frm_Mascara.Designer.cs">
       <DependentUpon>Frm_Mascara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_Mascara_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_Mascara_UC.Designer.cs">
+      <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_ValidaCPF2_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_ValidaCPF2_UC.Designer.cs">
+      <DependentUpon>Frm_ValidaCPF2_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_ValidaCPF_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_ValidaCPF_UC.Designer.cs">
+      <DependentUpon>Frm_ValidaCPF_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_ValidaSenha_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Curso1WindowsForms\Frm_ValidaSenha_UC.Designer.cs">
+      <DependentUpon>Frm_ValidaSenha_UC.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
@@ -123,6 +153,9 @@
     <EmbeddedResource Include="Curso1WindowsForms\Frm_DemonstracaoKey.resx">
       <DependentUpon>Frm_DemonstracaoKey.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Curso1WindowsForms\Frm_DemonstracaoKey_UC.resx">
+      <DependentUpon>Frm_DemonstracaoKey_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Curso1WindowsForms\Frm_HelloWorld.resx">
       <DependentUpon>Frm_HelloWorld.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +164,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Curso1WindowsForms\Frm_Mascara.resx">
       <DependentUpon>Frm_Mascara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curso1WindowsForms\Frm_Mascara_UC.resx">
+      <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curso1WindowsForms\Frm_ValidaCPF2_UC.resx">
+      <DependentUpon>Frm_ValidaCPF2_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curso1WindowsForms\Frm_ValidaCPF_UC.resx">
+      <DependentUpon>Frm_ValidaCPF_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Curso1WindowsForms\Frm_ValidaSenha_UC.resx">
+      <DependentUpon>Frm_ValidaSenha_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>

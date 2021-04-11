@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CursoWindowsForms
+namespace CursoWindowsForms.Curso1WindowsForms
 {
-    public partial class Frm_ValidaCPF2 : Form
+    public partial class Frm_ValidaCPF2_UC : UserControl
     {
-        public Frm_ValidaCPF2()
+        public Frm_ValidaCPF2_UC()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace CursoWindowsForms
         {
             string vConteudo;
             vConteudo = Msk_CPF.Text;
-            vConteudo = vConteudo.Replace(".", "").Replace("-", "");
+            vConteudo = vConteudo.Replace(".", "").Replace("-", "").Replace(",", "");
             vConteudo = vConteudo.Trim();
             if (vConteudo == "")
             {

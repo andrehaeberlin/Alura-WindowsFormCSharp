@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal_Menu_UC));
             this.Mnu_Principal = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +42,8 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbc_Principal = new System.Windows.Forms.TabControl();
+            this.Iml_Principal = new System.Windows.Forms.ImageList(this.components);
+            this.apagarTabPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +62,7 @@
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoToolStripMenuItem,
+            this.apagarTabPageToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -146,11 +151,30 @@
             // Tbc_Principal
             // 
             this.Tbc_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbc_Principal.ImageList = this.Iml_Principal;
             this.Tbc_Principal.Location = new System.Drawing.Point(0, 24);
             this.Tbc_Principal.Name = "Tbc_Principal";
             this.Tbc_Principal.SelectedIndex = 0;
             this.Tbc_Principal.Size = new System.Drawing.Size(800, 426);
             this.Tbc_Principal.TabIndex = 8;
+            // 
+            // Iml_Principal
+            // 
+            this.Iml_Principal.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Iml_Principal.ImageStream")));
+            this.Iml_Principal.TransparentColor = System.Drawing.Color.Transparent;
+            this.Iml_Principal.Images.SetKeyName(0, "Frm_DemonstracaoKey.png");
+            this.Iml_Principal.Images.SetKeyName(1, "Frm_HelloWorld.png");
+            this.Iml_Principal.Images.SetKeyName(2, "Frm_Mascara.png");
+            this.Iml_Principal.Images.SetKeyName(3, "Frm_ValidaCPF.png");
+            this.Iml_Principal.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
+            this.Iml_Principal.Images.SetKeyName(5, "Frm_ValidaSenha.png");
+            // 
+            // apagarTabPageToolStripMenuItem
+            // 
+            this.apagarTabPageToolStripMenuItem.Name = "apagarTabPageToolStripMenuItem";
+            this.apagarTabPageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.apagarTabPageToolStripMenuItem.Text = "Apagar TabPage";
+            this.apagarTabPageToolStripMenuItem.Click += new System.EventHandler(this.apagarTabPageToolStripMenuItem_Click);
             // 
             // Frm_Principal_Menu_UC
             // 
@@ -182,5 +206,7 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
         private System.Windows.Forms.TabControl Tbc_Principal;
+        private System.Windows.Forms.ImageList Iml_Principal;
+        private System.Windows.Forms.ToolStripMenuItem apagarTabPageToolStripMenuItem;
     }
 }

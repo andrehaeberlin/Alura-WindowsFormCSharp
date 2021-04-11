@@ -42,6 +42,7 @@
             this.Txt_Senha.PasswordChar = '*';
             this.Txt_Senha.Size = new System.Drawing.Size(218, 20);
             this.Txt_Senha.TabIndex = 0;
+            this.Txt_Senha.TextChanged += new System.EventHandler(this.Txt_Senha_TextChanged);
             this.Txt_Senha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Senha_KeyDown);
             // 
             // Lbl_Resultado
@@ -52,6 +53,7 @@
             this.Lbl_Resultado.Name = "Lbl_Resultado";
             this.Lbl_Resultado.Size = new System.Drawing.Size(0, 22);
             this.Lbl_Resultado.TabIndex = 1;
+            this.Lbl_Resultado.Click += new System.EventHandler(this.Lbl_Resultado_Click);
             // 
             // Btn_Reset
             // 
