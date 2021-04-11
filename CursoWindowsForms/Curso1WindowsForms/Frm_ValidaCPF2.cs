@@ -27,7 +27,7 @@ namespace CursoWindowsForms
         {
             string vConteudo;
             vConteudo = Msk_CPF.Text;
-            vConteudo = vConteudo.Replace(".", "").Replace("-", "");
+            vConteudo = vConteudo.Replace(".", "").Replace("-", "").Replace(",", "");
             vConteudo = vConteudo.Trim();
             if (vConteudo == "")
             {
