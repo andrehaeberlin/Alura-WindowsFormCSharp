@@ -63,6 +63,26 @@ namespace CursoWindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Folder_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Folder_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Folder_Icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Folder_Icon1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frm_DemonstracaoKey {
             get {
                 object obj = ResourceManager.GetObject("Frm_DemonstracaoKey", resourceCulture);
@@ -186,6 +206,26 @@ namespace CursoWindowsForms.Properties {
         internal static System.Drawing.Icon Frm_ValidaSenha1 {
             get {
                 object obj = ResourceManager.GetObject("Frm_ValidaSenha1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Red_question {
+            get {
+                object obj = ResourceManager.GetObject("Red_question", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Red_question1 {
+            get {
+                object obj = ResourceManager.GetObject("Red_question1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

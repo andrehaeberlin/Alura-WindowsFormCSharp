@@ -19,6 +19,7 @@ namespace CursoWindowsForms
         int controleValidaCPF = 0;
         int controleValidaCPF2 = 0;
         int controleValidaSenha = 0;
+        int controleArquivoImagem = 0;
 
         public Frm_Principal_Menu_UC()
         {
@@ -47,7 +48,7 @@ namespace CursoWindowsForms
             TabPage TB = new TabPage();
             TB.Name = $"Hello World {controleHelloWorld}";
             TB.Text = $"Hello World {controleHelloWorld}";
-            TB.ImageIndex = 1;
+            TB.ImageIndex = 5;
             TB.Controls.Add(U);
             Tbc_Principal.TabPages.Add(TB);
         }
@@ -114,6 +115,29 @@ namespace CursoWindowsForms
             if(Tbc_Principal.SelectedTab != null)
             {
                 Tbc_Principal.TabPages.Remove(Tbc_Principal.SelectedTab);
+            }
+        }
+
+        private void abrirImagemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Db = new OpenFileDialog();
+            Db.InitialDirectory = "C:\\Users\\andre\\source\\repos\\Alura-WindowsFormCSharp\\CursoWindowsForms\\Imagens";
+            Db.Filter = "PNG|*.PNG";
+            Db.Title = "Escolha a imagem";
+
+            if (Db.ShowDialog() == DialogResult.OK)
+            {
+                string nomeDoArquivoImagem = Db.FileName;
+
+                controleArquivoImagem += 1;
+                Frm_ArquivoImagem_UC U = new Frm_ArquivoImagem_UC(nomeDoArquivoImagem);
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = $"Arquivo Imagem.{controleArquivoImagem}";
+                TB.Text = $"Arquivo Imagem.{controleArquivoImagem}";
+                TB.ImageIndex = 6;
+                TB.Controls.Add(U);
+                Tbc_Principal.TabPages.Add(TB);
             }
         }
     }

@@ -39,11 +39,13 @@
             this.validaCPFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.validaCPF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.validaSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apagarTabPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.açõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirImagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbc_Principal = new System.Windows.Forms.TabControl();
             this.Iml_Principal = new System.Windows.Forms.ImageList(this.components);
-            this.apagarTabPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             // 
             this.Mnu_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
+            this.açõesToolStripMenuItem,
             this.windowsToolStripMenuItem});
             this.Mnu_Principal.Location = new System.Drawing.Point(0, 0);
             this.Mnu_Principal.Name = "Mnu_Principal";
@@ -135,12 +138,34 @@
             this.validaSenhaToolStripMenuItem.Text = "Valida &Senha";
             this.validaSenhaToolStripMenuItem.Click += new System.EventHandler(this.validaSenhaToolStripMenuItem_Click);
             // 
+            // apagarTabPageToolStripMenuItem
+            // 
+            this.apagarTabPageToolStripMenuItem.Name = "apagarTabPageToolStripMenuItem";
+            this.apagarTabPageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.apagarTabPageToolStripMenuItem.Text = "Apagar TabPage";
+            this.apagarTabPageToolStripMenuItem.Click += new System.EventHandler(this.apagarTabPageToolStripMenuItem_Click);
+            // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // açõesToolStripMenuItem
+            // 
+            this.açõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirImagemToolStripMenuItem});
+            this.açõesToolStripMenuItem.Name = "açõesToolStripMenuItem";
+            this.açõesToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.açõesToolStripMenuItem.Text = "Ações";
+            // 
+            // abrirImagemToolStripMenuItem
+            // 
+            this.abrirImagemToolStripMenuItem.Name = "abrirImagemToolStripMenuItem";
+            this.abrirImagemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirImagemToolStripMenuItem.Text = "Abrir Imagem";
+            this.abrirImagemToolStripMenuItem.Click += new System.EventHandler(this.abrirImagemToolStripMenuItem_Click);
             // 
             // windowsToolStripMenuItem
             // 
@@ -168,13 +193,7 @@
             this.Iml_Principal.Images.SetKeyName(3, "Frm_ValidaCPF.png");
             this.Iml_Principal.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
             this.Iml_Principal.Images.SetKeyName(5, "Frm_ValidaSenha.png");
-            // 
-            // apagarTabPageToolStripMenuItem
-            // 
-            this.apagarTabPageToolStripMenuItem.Name = "apagarTabPageToolStripMenuItem";
-            this.apagarTabPageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.apagarTabPageToolStripMenuItem.Text = "Apagar TabPage";
-            this.apagarTabPageToolStripMenuItem.Click += new System.EventHandler(this.apagarTabPageToolStripMenuItem_Click);
+            this.Iml_Principal.Images.SetKeyName(6, "Folder_Icon.png");
             // 
             // Frm_Principal_Menu_UC
             // 
@@ -183,6 +202,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Tbc_Principal);
             this.Controls.Add(this.Mnu_Principal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Principal_Menu_UC";
             this.Text = "Principal";
             this.Mnu_Principal.ResumeLayout(false);
@@ -208,5 +228,7 @@
         private System.Windows.Forms.TabControl Tbc_Principal;
         private System.Windows.Forms.ImageList Iml_Principal;
         private System.Windows.Forms.ToolStripMenuItem apagarTabPageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem açõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirImagemToolStripMenuItem;
     }
 }
