@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CursoWindowsForms
-{    
+{
     public partial class Frm_Principal_Menu_UC : Form
     {
         int controleDemonstracaoKey = 0;
@@ -24,6 +24,11 @@ namespace CursoWindowsForms
         public Frm_Principal_Menu_UC()
         {
             InitializeComponent();
+
+            novoToolStripMenuItem.Enabled = false;
+            apagarTabPageToolStripMenuItem.Enabled = false;
+            abrirImagemToolStripMenuItem.Enabled = false;
+            desconectarToolStripMenuItem.Enabled = false;
         }
 
         private void demonstraçãoKeyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,7 +117,7 @@ namespace CursoWindowsForms
 
         private void apagarTabPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Tbc_Principal.SelectedTab != null)
+            if (Tbc_Principal.SelectedTab != null)
             {
                 Tbc_Principal.TabPages.Remove(Tbc_Principal.SelectedTab);
             }
@@ -139,6 +144,57 @@ namespace CursoWindowsForms
                 TB.Controls.Add(U);
                 Tbc_Principal.TabPages.Add(TB);
             }
+        }
+
+        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Login F = new Frm_Login();
+            F.ShowDialog();
+
+            if (F.DialogResult == DialogResult.OK)
+            {
+                string senha = F.senha;
+                string login = F.login;
+
+                if (CursoWindowsFormsBiblioteca.Cls_Classe.validaSenhaLogin(senha) == true)
+                {
+                    novoToolStripMenuItem.Enabled = true;
+                    apagarTabPageToolStripMenuItem.Enabled = true;
+                    abrirImagemToolStripMenuItem.Enabled = true;
+                    conectarToolStripMenuItem.Enabled = false;
+                    desconectarToolStripMenuItem.Enabled = true;
+                    
+
+                    MessageBox.Show("Bem vindo " + login + " !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Bem inválida !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void desconectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Questao Db = new Frm_Questao("icons8_question_mark_961", "você deseja se desconectar ?");
+            Db.ShowDialog();
+
+            // if(MessageBox.Show("Você deseja realmente validar o CPF", "Mensagem de Validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+            if (Db.DialogResult == DialogResult.Yes)
+            {
+                for (int i = Tbc_Principal.TabPages.Count -1; i >= 0; i+= -1)
+                {
+                    Tbc_Principal.TabPages.Remove(Tbc_Principal.TabPages[i]);
+                }
+
+                novoToolStripMenuItem.Enabled = false;
+                apagarTabPageToolStripMenuItem.Enabled = false;
+                abrirImagemToolStripMenuItem.Enabled = false;
+                desconectarToolStripMenuItem.Enabled = false;
+                conectarToolStripMenuItem.Enabled = true;
+            }
+
         }
     }
 }
