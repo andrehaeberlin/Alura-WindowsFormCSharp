@@ -1,7 +1,7 @@
 ﻿
 namespace CursoWindowsForms
 {
-    partial class Frm_MouseEventos
+    partial class Frm_Menu_Flutuante
     {
         /// <summary>
         /// Required designer variable.
@@ -29,37 +29,20 @@ namespace CursoWindowsForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.Btn_Mouse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Btn_Mouse
-            // 
-            this.Btn_Mouse.Location = new System.Drawing.Point(121, 86);
-            this.Btn_Mouse.Name = "Btn_Mouse";
-            this.Btn_Mouse.Size = new System.Drawing.Size(401, 170);
-            this.Btn_Mouse.TabIndex = 0;
-            this.Btn_Mouse.UseVisualStyleBackColor = true;
-            this.Btn_Mouse.Click += new System.EventHandler(this.Btn_Mouse_Click);
-            this.Btn_Mouse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_Mouse_MouseDown);
-            this.Btn_Mouse.MouseEnter += new System.EventHandler(this.Btn_Mouse_MouseEnter);
-            this.Btn_Mouse.MouseLeave += new System.EventHandler(this.Btn_Mouse_MouseLeave);
-            this.Btn_Mouse.MouseHover += new System.EventHandler(this.Btn_Mouse_MouseHover);
-            this.Btn_Mouse.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_Mouse_MouseUp);
-            // 
-            // Frm_MouseEventos
+            // Frm_Menu_Flutuante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Btn_Mouse);
-            this.Name = "Frm_MouseEventos";
-            this.Text = "Frm_MouseEventos";
+            this.Name = "Frm_Menu_Flutuante";
+            this.Text = "Frm_Menu_Flutuante";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_Menu_Flutuante_MouseDown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Btn_Mouse;
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace CursoWindowsForms
 {
-    partial class Frm_MouseEventos
+    partial class Frm_MouseCursor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,37 +29,33 @@ namespace CursoWindowsForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.Btn_Mouse = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Btn_Mouse
+            // button1
             // 
-            this.Btn_Mouse.Location = new System.Drawing.Point(121, 86);
-            this.Btn_Mouse.Name = "Btn_Mouse";
-            this.Btn_Mouse.Size = new System.Drawing.Size(401, 170);
-            this.Btn_Mouse.TabIndex = 0;
-            this.Btn_Mouse.UseVisualStyleBackColor = true;
-            this.Btn_Mouse.Click += new System.EventHandler(this.Btn_Mouse_Click);
-            this.Btn_Mouse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_Mouse_MouseDown);
-            this.Btn_Mouse.MouseEnter += new System.EventHandler(this.Btn_Mouse_MouseEnter);
-            this.Btn_Mouse.MouseLeave += new System.EventHandler(this.Btn_Mouse_MouseLeave);
-            this.Btn_Mouse.MouseHover += new System.EventHandler(this.Btn_Mouse_MouseHover);
-            this.Btn_Mouse.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_Mouse_MouseUp);
+            this.button1.Location = new System.Drawing.Point(50, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(397, 184);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             // 
-            // Frm_MouseEventos
+            // Frm_MouseCursor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Btn_Mouse);
-            this.Name = "Frm_MouseEventos";
-            this.Text = "Frm_MouseEventos";
+            this.Controls.Add(this.button1);
+            this.Name = "Frm_MouseCursor";
+            this.Text = "Frm_MouseCursor";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button Btn_Mouse;
+        private System.Windows.Forms.Button button1;
     }
 }

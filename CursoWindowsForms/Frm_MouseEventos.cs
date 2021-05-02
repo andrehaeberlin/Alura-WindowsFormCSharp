@@ -36,5 +36,15 @@ namespace CursoWindowsForms
         {
             Btn_Mouse.Text = "Mouse Hover";
         }
+
+        private void Btn_Mouse_MouseDown(object sender, MouseEventArgs e)
+        {
+            Btn_Mouse.Text = "Mouse Down";
+        }
+
+        private void Btn_Mouse_MouseUp(object sender, MouseEventArgs e)
+        {
+            Btn_Mouse.Text = "Mouse Up";
+        }
     }
 }
