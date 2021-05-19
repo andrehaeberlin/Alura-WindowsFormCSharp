@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal_Menu_UC));
             this.Mnu_Principal = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desconectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.demonstraçãoKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helloWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +48,6 @@
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbc_Principal = new System.Windows.Forms.TabControl();
             this.Iml_Principal = new System.Windows.Forms.ImageList(this.components);
-            this.desconectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,20 @@
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // conectarToolStripMenuItem
+            // 
+            this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.conectarToolStripMenuItem.Text = "Conectar";
+            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
+            // 
+            // desconectarToolStripMenuItem
+            // 
+            this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
+            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desconectarToolStripMenuItem.Text = "Desconectar";
+            this.desconectarToolStripMenuItem.Click += new System.EventHandler(this.desconectarToolStripMenuItem_Click);
             // 
             // novoToolStripMenuItem
             // 
@@ -186,6 +200,7 @@
             this.Tbc_Principal.SelectedIndex = 0;
             this.Tbc_Principal.Size = new System.Drawing.Size(800, 426);
             this.Tbc_Principal.TabIndex = 8;
+            this.Tbc_Principal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Principal_MouseDown);
             // 
             // Iml_Principal
             // 
@@ -198,20 +213,6 @@
             this.Iml_Principal.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
             this.Iml_Principal.Images.SetKeyName(5, "Frm_ValidaSenha.png");
             this.Iml_Principal.Images.SetKeyName(6, "Folder_Icon.png");
-            // 
-            // desconectarToolStripMenuItem
-            // 
-            this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
-            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.desconectarToolStripMenuItem.Text = "Desconectar";
-            this.desconectarToolStripMenuItem.Click += new System.EventHandler(this.desconectarToolStripMenuItem_Click);
-            // 
-            // conectarToolStripMenuItem
-            // 
-            this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.conectarToolStripMenuItem.Text = "Conectar";
-            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // Frm_Principal_Menu_UC
             // 
