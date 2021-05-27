@@ -1,4 +1,5 @@
 ﻿using CursoWindowsForms.Curso1WindowsForms;
+using CursoWindowsForms.Curso2WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace CursoWindowsForms
         int controleValidaCPF2 = 0;
         int controleValidaSenha = 0;
         int controleArquivoImagem = 0;
+        int controleCadastroClientes = 0;
 
         public Frm_Principal_Menu_UC()
         {
@@ -120,7 +122,7 @@ namespace CursoWindowsForms
         {
             if (Tbc_Principal.SelectedTab != null)
             {
-                Tbc_Principal.TabPages.Remove(Tbc_Principal.SelectedTab);
+                ApagaAba(Tbc_Principal.SelectedTab);
             }
         }
 
@@ -164,7 +166,7 @@ namespace CursoWindowsForms
                     abrirImagemToolStripMenuItem.Enabled = true;
                     conectarToolStripMenuItem.Enabled = false;
                     desconectarToolStripMenuItem.Enabled = true;
-
+                    cadastrosToolStripMenuItem.Enabled = true;
 
                     MessageBox.Show("Bem vindo " + login + " !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -186,7 +188,7 @@ namespace CursoWindowsForms
             {
                 for (int i = Tbc_Principal.TabPages.Count - 1; i >= 0; i += -1)
                 {
-                    Tbc_Principal.TabPages.Remove(Tbc_Principal.TabPages[i]);
+                    ApagaAba(Tbc_Principal.TabPages[i]);
                 }
 
                 novoToolStripMenuItem.Enabled = false;
@@ -194,6 +196,7 @@ namespace CursoWindowsForms
                 abrirImagemToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = false;
                 conectarToolStripMenuItem.Enabled = true;
+                cadastrosToolStripMenuItem.Enabled = false;
             }
 
         }
@@ -222,7 +225,7 @@ namespace CursoWindowsForms
         {
             if (Tbc_Principal.SelectedTab != null)
             {
-                Tbc_Principal.TabPages.Remove(Tbc_Principal.SelectedTab);
+                ApagaAba(Tbc_Principal.SelectedTab);
                 MessageBox.Show("Esta aba foi fechada");
             }
 
@@ -267,7 +270,7 @@ namespace CursoWindowsForms
         {
             for (int i = ItemSelecionado - 1; i >= 0; i += -1)
             {
-                Tbc_Principal.TabPages.Remove(Tbc_Principal.TabPages[i]);
+                ApagaAba(Tbc_Principal.TabPages[i]);
             }
         }
 
@@ -275,9 +278,38 @@ namespace CursoWindowsForms
         {
             for (int i = Tbc_Principal.TabCount - 1; i > ItemSelecionado; i += -1)
             {
-                Tbc_Principal.TabPages.Remove(Tbc_Principal.TabPages[i]);
+                ApagaAba(Tbc_Principal.TabPages[i]);
             }
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(controleCadastroClientes == 0)
+            {
+                controleCadastroClientes = +1;
+                Frm_CadastroCliente_UC U = new Frm_CadastroCliente_UC();
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = "Cadastro de Clientes";
+                TB.Text = "Cadastro de Clientes";
+                TB.ImageIndex = 7;
+                TB.Controls.Add(U);
+                Tbc_Principal.TabPages.Add(TB);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir o Cadastro de Clientes, porque já estpá aberto.", "Banco ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        void ApagaAba(TabPage TB)
+        {
+            if (TB.Name == "Cadastro de Clientes" )
+            {
+                controleCadastroClientes = 0;
+            }
+            Tbc_Principal.TabPages.Remove(TB);
+        }
+
     }
 }
 
