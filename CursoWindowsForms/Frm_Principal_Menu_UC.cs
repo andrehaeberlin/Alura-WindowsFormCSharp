@@ -1,5 +1,4 @@
 ﻿using CursoWindowsForms.Curso1WindowsForms;
-using CursoWindowsForms.Curso2WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
