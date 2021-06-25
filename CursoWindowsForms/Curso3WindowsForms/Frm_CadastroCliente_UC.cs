@@ -29,7 +29,7 @@ namespace CursoWindowsForms
             Lbl_CEP.Text = "CEP";
             Lbl_Complemento.Text = "Complemento";
             Lbl_CPF.Text = "CPF";
-            Lbl_Estados.Text = "Estado";            
+            Lbl_Estados.Text = "Estado";
             Lbl_Logradouro.Text = "Logradouro";
             Lbl_NomeCliente.Text = "Nome";
             Lbl_NomeMae.Text = "Nome da Mãe";
@@ -42,7 +42,7 @@ namespace CursoWindowsForms
             Rdb_Masculino.Text = "Masculino";
             Rdb_Feminino.Text = "Feminino";
             Rdb_Indefinido.Text = "Indefinido";
-            
+
 
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");
@@ -193,6 +193,36 @@ namespace CursoWindowsForms
                 }
             }
             return C;
+        }
+
+        private void Txt_CEP_Leave(object sender, EventArgs e)
+        {
+            string vCep = Txt_CEP.Text;
+            if (vCep != "")
+            {
+                if (vCep.Length == 8)
+                {
+                    if (Information.IsNumeric(vCep))
+                    {
+                        var vJson = Cls_Uteis.GeraJSONCEP(vCep);
+                        CEP.Unit Cep = new CEP.Unit();
+                        Cep = CEP.DesSerializedClassUnit(vJson);
+                        Txt_Logradouro.Text = Cep.logradouro;
+                        Txt_Bairro.Text = Cep.bairro;
+                        Txt_Cidade.Text = Cep.localidade;
+
+                        Cmb_Estados.SelectedIndex = -1;
+                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                        {
+                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + Cep.uf + ")");
+                            if (vPos > 0)
+                            {
+                                Cmb_Estados.SelectedIndex = i;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

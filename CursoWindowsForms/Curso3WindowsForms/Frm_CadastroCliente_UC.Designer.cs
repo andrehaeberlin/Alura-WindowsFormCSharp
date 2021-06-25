@@ -67,13 +67,13 @@ namespace CursoWindowsForms
             this.Cmb_Estados = new System.Windows.Forms.ComboBox();
             this.Grp_Outros = new System.Windows.Forms.GroupBox();
             this.Tls_Principal = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.apagarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.limparToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Grp_Codigo.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Genero.SuspendLayout();
@@ -158,15 +158,16 @@ namespace CursoWindowsForms
             this.Txt_CEP.Name = "Txt_CEP";
             this.Txt_CEP.Size = new System.Drawing.Size(132, 20);
             this.Txt_CEP.TabIndex = 11;
+            this.Txt_CEP.Leave += new System.EventHandler(this.Txt_CEP_Leave);
             // 
             // Lbl_CEP
             // 
             this.Lbl_CEP.AutoSize = true;
             this.Lbl_CEP.Location = new System.Drawing.Point(6, 23);
             this.Lbl_CEP.Name = "Lbl_CEP";
-            this.Lbl_CEP.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_CEP.Size = new System.Drawing.Size(28, 13);
             this.Lbl_CEP.TabIndex = 10;
-            this.Lbl_CEP.Text = "label1";
+            this.Lbl_CEP.Text = "CEP";
             // 
             // Txt_Logradouro
             // 
@@ -445,16 +446,6 @@ namespace CursoWindowsForms
             this.Tls_Principal.TabIndex = 33;
             this.Tls_Principal.Text = "toolStrip1";
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -504,6 +495,16 @@ namespace CursoWindowsForms
             this.limparToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.limparToolStripButton.Text = "toolStripButton1";
             this.limparToolStripButton.Click += new System.EventHandler(this.limparToolStripButton_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // Frm_CadastroCliente_UC
             // 
