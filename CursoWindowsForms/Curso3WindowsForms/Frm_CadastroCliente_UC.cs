@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CursoWindowsFormsBiblioteca;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 
 namespace CursoWindowsForms
 {
@@ -20,7 +21,6 @@ namespace CursoWindowsForms
             InitializeComponent();
 
             LimparFormulario();
-
 
             Grp_Codigo.Text = "Código";
             Grp_DadosPessoais.Text = "Dados Pessoais";
@@ -103,7 +103,8 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string vJson = Cliente.SerializedClassUnit(C);
+                MessageBox.Show("Classe foi inicializada sem erros:" + vJson, "Aviso de Casastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException Ex)
             {

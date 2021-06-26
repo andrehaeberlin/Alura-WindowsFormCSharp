@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -117,6 +118,14 @@ namespace CursoWindowsFormsBiblioteca
             public List<Unit> ListUnit { get; set; }
         }
 
-        
+        public static Unit DesSerializedClassUnit(string vJson)
+        {
+            return JsonConvert.DeserializeObject<Unit>(vJson);
+        }
+
+        public static string SerializedClassUnit(Unit unit)
+        {
+            return JsonConvert.SerializeObject(unit);
+        }
     }
 }

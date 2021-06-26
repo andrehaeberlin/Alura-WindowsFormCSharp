@@ -70,8 +70,8 @@ namespace CursoWindowsForms
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.apagarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.limparToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.apagarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Grp_Codigo.SuspendLayout();
@@ -96,7 +96,7 @@ namespace CursoWindowsForms
             this.Txt_CPF.Location = new System.Drawing.Point(473, 76);
             this.Txt_CPF.Name = "Txt_CPF";
             this.Txt_CPF.Size = new System.Drawing.Size(207, 20);
-            this.Txt_CPF.TabIndex = 1;
+            this.Txt_CPF.TabIndex = 5;
             // 
             // Lbl_NomeCliente
             // 
@@ -114,7 +114,7 @@ namespace CursoWindowsForms
             this.Txt_NomeCliente.Location = new System.Drawing.Point(8, 37);
             this.Txt_NomeCliente.Name = "Txt_NomeCliente";
             this.Txt_NomeCliente.Size = new System.Drawing.Size(671, 20);
-            this.Txt_NomeCliente.TabIndex = 3;
+            this.Txt_NomeCliente.TabIndex = 2;
             // 
             // Lbl_NomePai
             // 
@@ -132,7 +132,7 @@ namespace CursoWindowsForms
             this.Txt_NomePai.Location = new System.Drawing.Point(8, 116);
             this.Txt_NomePai.Name = "Txt_NomePai";
             this.Txt_NomePai.Size = new System.Drawing.Size(445, 20);
-            this.Txt_NomePai.TabIndex = 5;
+            this.Txt_NomePai.TabIndex = 4;
             // 
             // Txt_NomeMae
             // 
@@ -141,7 +141,7 @@ namespace CursoWindowsForms
             this.Txt_NomeMae.Location = new System.Drawing.Point(8, 76);
             this.Txt_NomeMae.Name = "Txt_NomeMae";
             this.Txt_NomeMae.Size = new System.Drawing.Size(445, 20);
-            this.Txt_NomeMae.TabIndex = 7;
+            this.Txt_NomeMae.TabIndex = 3;
             // 
             // Lbl_NomeMae
             // 
@@ -157,7 +157,7 @@ namespace CursoWindowsForms
             this.Txt_CEP.Location = new System.Drawing.Point(6, 39);
             this.Txt_CEP.Name = "Txt_CEP";
             this.Txt_CEP.Size = new System.Drawing.Size(132, 20);
-            this.Txt_CEP.TabIndex = 11;
+            this.Txt_CEP.TabIndex = 6;
             this.Txt_CEP.Leave += new System.EventHandler(this.Txt_CEP_Leave);
             // 
             // Lbl_CEP
@@ -192,7 +192,7 @@ namespace CursoWindowsForms
             this.Txt_Complemento.Location = new System.Drawing.Point(6, 78);
             this.Txt_Complemento.Name = "Txt_Complemento";
             this.Txt_Complemento.Size = new System.Drawing.Size(313, 20);
-            this.Txt_Complemento.TabIndex = 15;
+            this.Txt_Complemento.TabIndex = 7;
             // 
             // Lbl_Complemento
             // 
@@ -233,7 +233,7 @@ namespace CursoWindowsForms
             this.Txt_Telefone.Location = new System.Drawing.Point(6, 36);
             this.Txt_Telefone.Name = "Txt_Telefone";
             this.Txt_Telefone.Size = new System.Drawing.Size(328, 20);
-            this.Txt_Telefone.TabIndex = 21;
+            this.Txt_Telefone.TabIndex = 8;
             // 
             // Lbl_Telefone
             // 
@@ -251,7 +251,7 @@ namespace CursoWindowsForms
             this.Txt_Profissao.Location = new System.Drawing.Point(341, 36);
             this.Txt_Profissao.Name = "Txt_Profissao";
             this.Txt_Profissao.Size = new System.Drawing.Size(338, 20);
-            this.Txt_Profissao.TabIndex = 23;
+            this.Txt_Profissao.TabIndex = 9;
             // 
             // Lbl_Profissao
             // 
@@ -267,7 +267,7 @@ namespace CursoWindowsForms
             this.Txt_RendaFamiliar.Location = new System.Drawing.Point(6, 75);
             this.Txt_RendaFamiliar.Name = "Txt_RendaFamiliar";
             this.Txt_RendaFamiliar.Size = new System.Drawing.Size(328, 20);
-            this.Txt_RendaFamiliar.TabIndex = 25;
+            this.Txt_RendaFamiliar.TabIndex = 10;
             // 
             // Lbl_RendaFamiliar
             // 
@@ -293,7 +293,7 @@ namespace CursoWindowsForms
             this.Txt_Codigo.Location = new System.Drawing.Point(6, 19);
             this.Txt_Codigo.Name = "Txt_Codigo";
             this.Txt_Codigo.Size = new System.Drawing.Size(209, 20);
-            this.Txt_Codigo.TabIndex = 30;
+            this.Txt_Codigo.TabIndex = 1;
             // 
             // Grp_DadosPessoais
             // 
@@ -314,11 +314,11 @@ namespace CursoWindowsForms
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "groupBox1";
             // 
-            // Chk_TemPai
+            // Chk_NaoTemPai
             // 
             this.Chk_NaoTemPai.AutoSize = true;
             this.Chk_NaoTemPai.Location = new System.Drawing.Point(11, 142);
-            this.Chk_NaoTemPai.Name = "Chk_TemPai";
+            this.Chk_NaoTemPai.Name = "Chk_NaoTemPai";
             this.Chk_NaoTemPai.Size = new System.Drawing.Size(80, 17);
             this.Chk_NaoTemPai.TabIndex = 11;
             this.Chk_NaoTemPai.Text = "checkBox1";
@@ -476,16 +476,6 @@ namespace CursoWindowsForms
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
-            // apagarToolStripButton
-            // 
-            this.apagarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.apagarToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.ExcluirBarra;
-            this.apagarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.apagarToolStripButton.Name = "apagarToolStripButton";
-            this.apagarToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.apagarToolStripButton.Text = "toolStripButton1";
-            this.apagarToolStripButton.Click += new System.EventHandler(this.apagarToolStripButton_Click);
-            // 
             // limparToolStripButton
             // 
             this.limparToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -495,6 +485,16 @@ namespace CursoWindowsForms
             this.limparToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.limparToolStripButton.Text = "toolStripButton1";
             this.limparToolStripButton.Click += new System.EventHandler(this.limparToolStripButton_Click);
+            // 
+            // apagarToolStripButton
+            // 
+            this.apagarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.apagarToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.ExcluirBarra;
+            this.apagarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.apagarToolStripButton.Name = "apagarToolStripButton";
+            this.apagarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.apagarToolStripButton.Text = "toolStripButton1";
+            this.apagarToolStripButton.Click += new System.EventHandler(this.apagarToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
