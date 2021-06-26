@@ -19,6 +19,9 @@ namespace CursoWindowsForms
         {
             InitializeComponent();
 
+            LimparFormulario();
+
+
             Grp_Codigo.Text = "Código";
             Grp_DadosPessoais.Text = "Dados Pessoais";
             Grp_Endereco.Text = "Endereço";
@@ -38,7 +41,7 @@ namespace CursoWindowsForms
             Lbl_RendaFamiliar.Text = "Renda Familiar";
             Lbl_Telefone.Text = "Telefone";
             Lbl_Cidade.Text = "Cidade";
-            Chk_TemPai.Text = "Pai desconhecido";
+            Chk_NaoTemPai.Text = "Pai desconhecido";
             Rdb_Masculino.Text = "Masculino";
             Rdb_Feminino.Text = "Feminino";
             Rdb_Indefinido.Text = "Indefinido";
@@ -82,7 +85,7 @@ namespace CursoWindowsForms
 
         private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
         {
-            if (Chk_TemPai.Checked)
+            if (Chk_NaoTemPai.Checked)
             {
                 Txt_NomePai.Enabled = false;
             }
@@ -130,7 +133,28 @@ namespace CursoWindowsForms
 
         private void limparToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão LIMPAR");
+            LimparFormulario();
+            MessageBox.Show("Formulário Limpo");
+        }
+
+        private void LimparFormulario()
+        {
+            Txt_Codigo.Text = "";
+            Txt_Bairro.Text = "";
+            Txt_CEP.Text = "";
+            Txt_Complemento.Text = "";
+            Txt_CPF.Text = "";
+            Cmb_Estados.SelectedIndex = -1;
+            Txt_Logradouro.Text = "";
+            Txt_NomeCliente.Text = "";
+            Txt_NomeMae.Text = "";
+            Txt_NomePai.Text = "";
+            Txt_Profissao.Text = "";
+            Txt_RendaFamiliar.Text = "";
+            Txt_Telefone.Text = "";
+            Txt_Cidade.Text = "";
+            Chk_NaoTemPai.Checked = false;
+            Rdb_Masculino.Checked = true;
         }
 
         Cliente.Unit LeituraFormulario()
@@ -140,7 +164,7 @@ namespace CursoWindowsForms
             C.Nome = Txt_NomeCliente.Text;
             C.NomeMae = Txt_NomeMae.Text;
             C.NomePai = Txt_NomePai.Text;
-            if (Chk_TemPai.Checked)
+            if (Chk_NaoTemPai.Checked)
             {
                 C.NaoTemPai = true;
             }

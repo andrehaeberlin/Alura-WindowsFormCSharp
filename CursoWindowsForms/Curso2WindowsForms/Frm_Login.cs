@@ -24,8 +24,7 @@ namespace CursoWindowsForms
             Btn_OK.Text = "OK";
             Btn_Cancel.Text = "Cancel";
         }
-
-        private void Btn_OK_Click(object sender, EventArgs e)
+        private void VerificacaoLogin()
         {
             DialogResult = DialogResult.OK;
 
@@ -35,11 +34,26 @@ namespace CursoWindowsForms
             this.Close();
         }
 
+        private void Btn_OK_Click(object sender, EventArgs e)
+        {
+            VerificacaoLogin();
+        }
+
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
 
             this.Close();
+        }
+
+
+        private void Txt_Senha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode ==  Keys.Enter)
+            {
+                VerificacaoLogin();
+            }
+            
         }
     }
 }

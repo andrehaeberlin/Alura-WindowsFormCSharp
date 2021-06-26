@@ -56,7 +56,7 @@ namespace CursoWindowsForms
             this.Grp_Codigo = new System.Windows.Forms.GroupBox();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
-            this.Chk_TemPai = new System.Windows.Forms.CheckBox();
+            this.Chk_NaoTemPai = new System.Windows.Forms.CheckBox();
             this.Grp_Genero = new System.Windows.Forms.GroupBox();
             this.Rdb_Indefinido = new System.Windows.Forms.RadioButton();
             this.Rdb_Feminino = new System.Windows.Forms.RadioButton();
@@ -297,7 +297,7 @@ namespace CursoWindowsForms
             // 
             // Grp_DadosPessoais
             // 
-            this.Grp_DadosPessoais.Controls.Add(this.Chk_TemPai);
+            this.Grp_DadosPessoais.Controls.Add(this.Chk_NaoTemPai);
             this.Grp_DadosPessoais.Controls.Add(this.Grp_Genero);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_NomeCliente);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_CPF);
@@ -316,14 +316,14 @@ namespace CursoWindowsForms
             // 
             // Chk_TemPai
             // 
-            this.Chk_TemPai.AutoSize = true;
-            this.Chk_TemPai.Location = new System.Drawing.Point(11, 142);
-            this.Chk_TemPai.Name = "Chk_TemPai";
-            this.Chk_TemPai.Size = new System.Drawing.Size(80, 17);
-            this.Chk_TemPai.TabIndex = 11;
-            this.Chk_TemPai.Text = "checkBox1";
-            this.Chk_TemPai.UseVisualStyleBackColor = true;
-            this.Chk_TemPai.CheckedChanged += new System.EventHandler(this.Chk_TemPai_CheckedChanged);
+            this.Chk_NaoTemPai.AutoSize = true;
+            this.Chk_NaoTemPai.Location = new System.Drawing.Point(11, 142);
+            this.Chk_NaoTemPai.Name = "Chk_TemPai";
+            this.Chk_NaoTemPai.Size = new System.Drawing.Size(80, 17);
+            this.Chk_NaoTemPai.TabIndex = 11;
+            this.Chk_NaoTemPai.Text = "checkBox1";
+            this.Chk_NaoTemPai.UseVisualStyleBackColor = true;
+            this.Chk_NaoTemPai.CheckedChanged += new System.EventHandler(this.Chk_TemPai_CheckedChanged);
             // 
             // Grp_Genero
             // 
@@ -436,8 +436,8 @@ namespace CursoWindowsForms
             this.newToolStripButton,
             this.openToolStripButton,
             this.saveToolStripButton,
-            this.apagarToolStripButton,
             this.limparToolStripButton,
+            this.apagarToolStripButton,
             this.toolStripSeparator,
             this.toolStripSeparator1});
             this.Tls_Principal.Location = new System.Drawing.Point(0, 0);
@@ -479,7 +479,7 @@ namespace CursoWindowsForms
             // apagarToolStripButton
             // 
             this.apagarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.apagarToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.LimparBarra;
+            this.apagarToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.ExcluirBarra;
             this.apagarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.apagarToolStripButton.Name = "apagarToolStripButton";
             this.apagarToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -489,7 +489,7 @@ namespace CursoWindowsForms
             // limparToolStripButton
             // 
             this.limparToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.limparToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.ExcluirBarra;
+            this.limparToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.LimparBarra;
             this.limparToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.limparToolStripButton.Name = "limparToolStripButton";
             this.limparToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -565,7 +565,7 @@ namespace CursoWindowsForms
         private System.Windows.Forms.GroupBox Grp_Endereco;
         private System.Windows.Forms.GroupBox Grp_Outros;
         private System.Windows.Forms.RadioButton Rdb_Indefinido;
-        private System.Windows.Forms.CheckBox Chk_TemPai;
+        private System.Windows.Forms.CheckBox Chk_NaoTemPai;
         private System.Windows.Forms.GroupBox Grp_Genero;
         private System.Windows.Forms.RadioButton Rdb_Feminino;
         private System.Windows.Forms.RadioButton Rdb_Masculino;
