@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CursoWindowsFormsBiblioteca;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
+using CursoWindowsFormsBiblioteca;
+using CursoWindowsFormsBiblioteca.DataBases;
 using Newtonsoft.Json;
+
 
 namespace CursoWindowsForms
 {
@@ -45,7 +47,6 @@ namespace CursoWindowsForms
             Rdb_Masculino.Text = "Masculino";
             Rdb_Feminino.Text = "Feminino";
             Rdb_Indefinido.Text = "Indefinido";
-
 
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");

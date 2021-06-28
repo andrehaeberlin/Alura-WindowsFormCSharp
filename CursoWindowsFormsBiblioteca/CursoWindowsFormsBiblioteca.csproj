@@ -49,6 +49,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Cls_Classe.cs" />
     <Compile Include="Cls_Uteis.cs" />
+    <Compile Include="DataBases\Fichario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
