@@ -56,5 +56,85 @@ namespace CursoWindowsFormsBiblioteca.DataBases
                 Mensagem = "Conexão com o Fichario com erro: " + ex.Message;
             }
         }
+
+        public string Buscar(string Id)
+        {
+            Status = true;
+
+            try
+            {
+                if (!(File.Exists(Diretorio + "\\" + Id + ".json")))
+                {
+                    Status = false;
+                    Mensagem = "Identificador não existente: " + Id;
+                }
+                else
+                {
+                    string _conteudo = File.ReadAllText(Diretorio + "\\" + Id + ".json");
+                    Status = true;
+                    Mensagem = "Busca efetuada com sucesso. Identificador: " + Id;
+                    return _conteudo;
+                }
+            }
+            catch (Exception ex)
+            {
+                Status = false;     
+                Mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;                
+            }
+
+            return "";
+        }
+
+        public void Apagar(string Id)
+        {
+            Status = true;
+
+            try
+            {
+                if (!(File.Exists(Diretorio + "\\" + Id + ".json")))
+                {
+                    Status = false;
+                    Mensagem = "Identificador não existente: " + Id;
+                }
+                else
+                {
+                    File.Delete(Diretorio + "\\" + Id + ".json");
+                    Status = true;
+                    Mensagem = "Exclusão efetuada com sucesso. Identificador: " + Id;
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                Mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
+            }
+        }
+        public void Alterar(string Id, string jsonUnit)
+        {
+            Status = true;
+
+            try
+            {
+                if (!(File.Exists(Diretorio + "\\" + Id + ".json")))
+                {
+                    Status = false;
+                    Mensagem = "Alteração não permitida porque o identificador não existe: " + Id;
+                }
+                else
+                {
+                    File.Delete(Diretorio + "\\" + Id + ".json");
+                    File.WriteAllText(Diretorio + "\\" + Id + ".json", jsonUnit);
+                    Status = true;
+                    Mensagem = "Alteração efetuada com sucesso. Identificador: " + Id;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                Mensagem = "Conexão com o fichário com Erro. Identificador: " + ex.Message;
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.VisualBasic;
 using CursoWindowsFormsBiblioteca;
 using CursoWindowsFormsBiblioteca.DataBases;
 using Newtonsoft.Json;
-
+using CursoWindowsForms.Curso1WindowsForms;
 
 namespace CursoWindowsForms
 {
@@ -80,8 +80,8 @@ namespace CursoWindowsForms
             Tls_Principal.Items[0].ToolTipText = "Incluir na base de dados um novo cliente";
             Tls_Principal.Items[1].ToolTipText = "Capturar um cliente já cadastrado na base";
             Tls_Principal.Items[2].ToolTipText = "Atualize o cliente já existente";
-            Tls_Principal.Items[3].ToolTipText = "Apaga o cliente selecionado";
-            Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
+            Tls_Principal.Items[3].ToolTipText = "Limpa dados da tela de entrada de dados";
+            Tls_Principal.Items[4].ToolTipText = "Apaga o cliente selecionado"; 
         }
 
         private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
@@ -104,8 +104,20 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                string vJson = Cliente.SerializedClassUnit(C);
-                MessageBox.Show("Classe foi inicializada sem erros:" + vJson, "Aviso de Casastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string vJson = Cliente.SerializedClassUnit(C);                
+                Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                if (F.Status)
+                {
+                    F.Incluir(C.Id, vJson);
+                    if (F.Status)
+                    {
+                        MessageBox.Show("OK: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (ValidationException Ex)
             {
@@ -120,135 +132,291 @@ namespace CursoWindowsForms
 
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão ABRIR");
+            if (Txt_Codigo.Text == "")
+            {
+                MessageBox.Show("Código do CLiente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                if (F.Status)
+                {
+                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+                    Cliente.Unit C = new Cliente.Unit();
+                    C = Cliente.DesSerializedClassUnit(clienteJson);
+                    if (F.Status)
+                    {
+                        EscreverFormulario(C);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Código do CLiente não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão SALVAR");
+            if (Txt_Codigo.Text == "")
+            {
+                MessageBox.Show("Código do CLiente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    Cliente.Unit C = new Cliente.Unit();
+                    C = LeituraFormulario();
+                    C.ValidaClasse();
+                    C.ValidaComplemento();
+                    string vJson = Cliente.SerializedClassUnit(C);
+                    Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    if (F.Status)
+                    {
+                        F.Alterar(C.Id, vJson);
+                        if (F.Status)
+                        {
+                            MessageBox.Show("OK: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }
+                catch (ValidationException Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+              
+        }
+    
+
+    private void apagarToolStripButton_Click(object sender, EventArgs e)
+    {
+        if (Txt_Codigo.Text == "")
+        {
+            MessageBox.Show("Código do CLiente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        else
+        {
+            Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+            if (F.Status)
+            {
+                string clienteJson = F.Buscar(Txt_Codigo.Text);
+                Cliente.Unit C = new Cliente.Unit();
+                C = Cliente.DesSerializedClassUnit(clienteJson);
+                EscreverFormulario(C);
+
+                Frm_Questao Db = new Frm_Questao("Red_question", "Você quer excluir o cliente?");
+                Db.ShowDialog();
+                if (Db.DialogResult == DialogResult.Yes)
+                {
+                    F.Apagar(Txt_Codigo.Text);
+                    if (F.Status)
+                    {
+                        MessageBox.Show("OK: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimparFormulario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("ERR: " + F.Mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+    private void limparToolStripButton_Click(object sender, EventArgs e)
+    {
+        LimparFormulario();
+        MessageBox.Show("Formulário Limpo");
+    }
+
+    private void LimparFormulario()
+    {
+        Txt_Codigo.Text = "";
+        Txt_Bairro.Text = "";
+        Txt_CEP.Text = "";
+        Txt_Complemento.Text = "";
+        Txt_CPF.Text = "";
+        Cmb_Estados.SelectedIndex = -1;
+        Txt_Logradouro.Text = "";
+        Txt_NomeCliente.Text = "";
+        Txt_NomeMae.Text = "";
+        Txt_NomePai.Text = "";
+        Txt_Profissao.Text = "";
+        Txt_RendaFamiliar.Text = "";
+        Txt_Telefone.Text = "";
+        Txt_Cidade.Text = "";
+        Chk_NaoTemPai.Checked = false;
+        Rdb_Masculino.Checked = true;
+    }
+
+    Cliente.Unit LeituraFormulario()
+    {
+        Cliente.Unit C = new Cliente.Unit();
+        C.Id = Txt_Codigo.Text;
+        C.Nome = Txt_NomeCliente.Text;
+        C.NomeMae = Txt_NomeMae.Text;
+        C.NomePai = Txt_NomePai.Text;
+        if (Chk_NaoTemPai.Checked)
+        {
+            C.NaoTemPai = true;
+        }
+        else
+        {
+            C.NaoTemPai = false;
+        }
+        if (Rdb_Masculino.Checked)
+        {
+            C.Genero = 0;
+        }
+        if (Rdb_Feminino.Checked)
+        {
+            C.Genero = 1;
+        }
+        if (Rdb_Indefinido.Checked)
+        {
+            C.Genero = 2;
+        }
+        C.Cpf = Txt_CPF.Text;
+
+        C.Cep = Txt_CEP.Text;
+        C.Logradouro = Txt_Logradouro.Text;
+        C.Complemento = Txt_Complemento.Text;
+        C.Cidade = Txt_Cidade.Text;
+        C.Bairro = Txt_Bairro.Text;
+
+        if (Cmb_Estados.SelectedIndex < 0)
+        {
+            C.Estado = "";
+        }
+        else
+        {
+            C.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
         }
 
-        private void apagarToolStripButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Efetuei um clique sobre o botão EXCLUIR");
-        }
+        C.Telefone = Txt_Telefone.Text;
+        C.Profissao = Txt_Profissao.Text;
 
-        private void limparToolStripButton_Click(object sender, EventArgs e)
+        if (Information.IsNumeric(Txt_RendaFamiliar.Text))
         {
-            LimparFormulario();
-            MessageBox.Show("Formulário Limpo");
+            Double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
+            if (vRenda < 0)
+            {
+                C.RendaFamiliar = 0;
+            }
+            else
+            {
+                C.RendaFamiliar = vRenda;
+            }
         }
+        return C;
+    }
 
-        private void LimparFormulario()
+    void EscreverFormulario(Cliente.Unit C)
+    {
+        Txt_NomeCliente.Text = C.Nome;
+        Txt_NomeMae.Text = C.NomeMae;
+        Txt_NomePai.Text = C.NomePai;
+
+        if (C.NaoTemPai == true)
         {
-            Txt_Codigo.Text = "";
-            Txt_Bairro.Text = "";
-            Txt_CEP.Text = "";
-            Txt_Complemento.Text = "";
-            Txt_CPF.Text = "";
-            Cmb_Estados.SelectedIndex = -1;
-            Txt_Logradouro.Text = "";
-            Txt_NomeCliente.Text = "";
-            Txt_NomeMae.Text = "";
+            Chk_NaoTemPai.Checked = true;
             Txt_NomePai.Text = "";
-            Txt_Profissao.Text = "";
-            Txt_RendaFamiliar.Text = "";
-            Txt_Telefone.Text = "";
-            Txt_Cidade.Text = "";
+        }
+        else
+        {
             Chk_NaoTemPai.Checked = false;
+            Txt_NomePai.Text = C.NomePai;
+        }
+
+        if (C.Genero == 0)
+        {
             Rdb_Masculino.Checked = true;
         }
-
-        Cliente.Unit LeituraFormulario()
+        if (C.Genero == 1)
         {
-            Cliente.Unit C = new Cliente.Unit();
-            C.Id = Txt_Codigo.Text;
-            C.Nome = Txt_NomeCliente.Text;
-            C.NomeMae = Txt_NomeMae.Text;
-            C.NomePai = Txt_NomePai.Text;
-            if (Chk_NaoTemPai.Checked)
-            {
-                C.NaoTemPai = true;
-            }
-            else
-            {
-                C.NaoTemPai = false;
-            }
-            if (Rdb_Masculino.Checked)
-            {
-                C.Genero = 0;
-            }
-            if (Rdb_Feminino.Checked)
-            {
-                C.Genero = 1;
-            }
-            if (Rdb_Indefinido.Checked)
-            {
-                C.Genero = 2;
-            }
-            C.Cpf = Txt_CPF.Text;
-
-            C.Cep = Txt_CEP.Text;
-            C.Logradouro = Txt_Logradouro.Text;
-            C.Complemento = Txt_Complemento.Text;
-            C.Cidade = Txt_Cidade.Text;
-            C.Bairro = Txt_Bairro.Text;
-
-            if (Cmb_Estados.SelectedIndex < 0)
-            {
-                C.Estado = "";
-            }
-            else
-            {
-                C.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
-            }
-
-            C.Telefone = Txt_Telefone.Text;
-            C.Profissao = Txt_Profissao.Text;
-
-            if (Information.IsNumeric(Txt_RendaFamiliar.Text))
-            {
-                Double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
-                if (vRenda < 0)
-                {
-                    C.RendaFamiliar = 0;
-                }
-                else
-                {
-                    C.RendaFamiliar = vRenda;
-                }
-            }
-            return C;
+            Rdb_Feminino.Checked = true;
+        }
+        if (C.Genero == 2)
+        {
+            Rdb_Indefinido.Checked = true;
         }
 
-        private void Txt_CEP_Leave(object sender, EventArgs e)
-        {
-            string vCep = Txt_CEP.Text;
-            if (vCep != "")
-            {
-                if (vCep.Length == 8)
-                {
-                    if (Information.IsNumeric(vCep))
-                    {
-                        var vJson = Cls_Uteis.GeraJSONCEP(vCep);
-                        CEP.Unit Cep = new CEP.Unit();
-                        Cep = CEP.DesSerializedClassUnit(vJson);
-                        Txt_Logradouro.Text = Cep.logradouro;
-                        Txt_Bairro.Text = Cep.bairro;
-                        Txt_Cidade.Text = Cep.localidade;
+        Txt_CPF.Text = C.Cpf;
 
-                        Cmb_Estados.SelectedIndex = -1;
-                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+        Txt_CEP.Text = C.Cep;
+        Txt_Logradouro.Text = C.Logradouro;
+        Txt_Complemento.Text = C.Complemento;
+        Txt_Cidade.Text = C.Cidade;
+        Txt_Bairro.Text = C.Bairro;
+
+        if (C.Estado == "")
+        {
+            Cmb_Estados.SelectedIndex = -1;
+        }
+        else
+        {
+            for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+            {
+                if (C.Estado == Cmb_Estados.Items[i].ToString())
+                {
+                    Cmb_Estados.SelectedIndex = i;
+                }
+            }
+        }
+
+        Txt_Telefone.Text = C.Telefone;
+        Txt_Profissao.Text = C.Profissao;
+
+        Txt_RendaFamiliar.Text = C.RendaFamiliar.ToString();
+    }
+
+    private void Txt_CEP_Leave(object sender, EventArgs e)
+    {
+        string vCep = Txt_CEP.Text;
+        if (vCep != "")
+        {
+            if (vCep.Length == 8)
+            {
+                if (Information.IsNumeric(vCep))
+                {
+                    var vJson = Cls_Uteis.GeraJSONCEP(vCep);
+                    CEP.Unit Cep = new CEP.Unit();
+                    Cep = CEP.DesSerializedClassUnit(vJson);
+                    Txt_Logradouro.Text = Cep.logradouro;
+                    Txt_Bairro.Text = Cep.bairro;
+                    Txt_Cidade.Text = Cep.localidade;
+
+                    Cmb_Estados.SelectedIndex = -1;
+                    for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                    {
+                        var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + Cep.uf + ")");
+                        if (vPos > 0)
                         {
-                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + Cep.uf + ")");
-                            if (vPos > 0)
-                            {
-                                Cmb_Estados.SelectedIndex = i;
-                            }
+                            Cmb_Estados.SelectedIndex = i;
                         }
                     }
                 }
             }
         }
     }
+}
 }
