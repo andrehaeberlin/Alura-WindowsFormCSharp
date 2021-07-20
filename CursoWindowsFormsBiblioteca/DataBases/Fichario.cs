@@ -93,7 +93,7 @@ namespace CursoWindowsFormsBiblioteca.DataBases
             try
             {
                 var Arquivos = Directory.GetFiles(Diretorio, "*.json");
-                for (int i = 0; i < Arquivos.Length -1; i++)
+                for (int i = 0; i <= Arquivos.Length - 1; i++)
                 {
                     string conteudo = File.ReadAllText(Arquivos[i]);
                     List.Add(conteudo);

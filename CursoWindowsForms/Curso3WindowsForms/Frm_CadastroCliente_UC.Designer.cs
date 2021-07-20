@@ -54,6 +54,7 @@ namespace CursoWindowsForms
             this.Txt_RendaFamiliar = new System.Windows.Forms.TextBox();
             this.Lbl_RendaFamiliar = new System.Windows.Forms.Label();
             this.Grp_Codigo = new System.Windows.Forms.GroupBox();
+            this.Btn_Busca = new System.Windows.Forms.Button();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
             this.Chk_NaoTemPai = new System.Windows.Forms.CheckBox();
@@ -74,7 +75,6 @@ namespace CursoWindowsForms
             this.apagarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.Btn_Busca = new System.Windows.Forms.Button();
             this.Grp_Codigo.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Genero.SuspendLayout();
@@ -289,6 +289,16 @@ namespace CursoWindowsForms
             this.Grp_Codigo.TabIndex = 29;
             this.Grp_Codigo.TabStop = false;
             this.Grp_Codigo.Text = "groupBox1";
+            // 
+            // Btn_Busca
+            // 
+            this.Btn_Busca.Location = new System.Drawing.Point(221, 17);
+            this.Btn_Busca.Name = "Btn_Busca";
+            this.Btn_Busca.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Busca.TabIndex = 2;
+            this.Btn_Busca.Text = "button1";
+            this.Btn_Busca.UseVisualStyleBackColor = true;
+            this.Btn_Busca.Click += new System.EventHandler(this.Btn_Busca_Click);
             // 
             // Txt_Codigo
             // 
@@ -507,15 +517,6 @@ namespace CursoWindowsForms
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // Btn_Busca
-            // 
-            this.Btn_Busca.Location = new System.Drawing.Point(221, 17);
-            this.Btn_Busca.Name = "Btn_Busca";
-            this.Btn_Busca.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Busca.TabIndex = 2;
-            this.Btn_Busca.Text = "button1";
-            this.Btn_Busca.UseVisualStyleBackColor = true;
             // 
             // Frm_CadastroCliente_UC
             // 

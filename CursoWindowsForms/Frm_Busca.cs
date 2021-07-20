@@ -35,7 +35,7 @@ namespace CursoWindowsForms
             for (int i = 0; i <= _ListaBusca.Count - 1; i++)
             {
                 ItemBox X = new ItemBox();
-                X.Id = _ListaBusca[1][0];
+                X.Id = _ListaBusca[i][0];
                 X.Nome = _ListaBusca[i][1];
                 Lst_Busca.Items.Add(X);
             }
