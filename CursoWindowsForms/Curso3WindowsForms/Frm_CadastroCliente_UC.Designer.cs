@@ -74,6 +74,7 @@ namespace CursoWindowsForms
             this.apagarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.Btn_Busca = new System.Windows.Forms.Button();
             this.Grp_Codigo.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Genero.SuspendLayout();
@@ -280,10 +281,11 @@ namespace CursoWindowsForms
             // 
             // Grp_Codigo
             // 
+            this.Grp_Codigo.Controls.Add(this.Btn_Busca);
             this.Grp_Codigo.Controls.Add(this.Txt_Codigo);
             this.Grp_Codigo.Location = new System.Drawing.Point(12, 34);
             this.Grp_Codigo.Name = "Grp_Codigo";
-            this.Grp_Codigo.Size = new System.Drawing.Size(227, 53);
+            this.Grp_Codigo.Size = new System.Drawing.Size(319, 53);
             this.Grp_Codigo.TabIndex = 29;
             this.Grp_Codigo.TabStop = false;
             this.Grp_Codigo.Text = "groupBox1";
@@ -506,6 +508,15 @@ namespace CursoWindowsForms
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // Btn_Busca
+            // 
+            this.Btn_Busca.Location = new System.Drawing.Point(221, 17);
+            this.Btn_Busca.Name = "Btn_Busca";
+            this.Btn_Busca.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Busca.TabIndex = 2;
+            this.Btn_Busca.Text = "button1";
+            this.Btn_Busca.UseVisualStyleBackColor = true;
+            // 
             // Frm_CadastroCliente_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,5 +591,6 @@ namespace CursoWindowsForms
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton apagarToolStripButton;
         private System.Windows.Forms.ToolStripButton limparToolStripButton;
+        private System.Windows.Forms.Button Btn_Busca;
     }
 }

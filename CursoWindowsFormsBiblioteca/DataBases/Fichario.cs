@@ -85,6 +85,30 @@ namespace CursoWindowsFormsBiblioteca.DataBases
             return "";
         }
 
+        public List<string> BuscarTodos()
+        {
+            Status = true;
+
+            List<string> List = new List<string>();
+            try
+            {
+                var Arquivos = Directory.GetFiles(Diretorio, "*.json");
+                for (int i = 0; i < Arquivos.Length -1; i++)
+                {
+                    string conteudo = File.ReadAllText(Arquivos[i]);
+                    List.Add(conteudo);
+                }
+                return List;                               
+            }
+            catch (Exception ex)
+            {
+                Status = false;
+                Mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
+            }
+
+            return List;
+        }
+
         public void Apagar(string Id)
         {
             Status = true;
@@ -136,5 +160,7 @@ namespace CursoWindowsFormsBiblioteca.DataBases
                 Mensagem = "Conexão com o fichário com Erro. Identificador: " + ex.Message;
             }
         }
+
+
     }
 }
