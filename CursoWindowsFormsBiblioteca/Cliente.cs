@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CursoWindowsFormsBiblioteca.DataBases;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,7 +28,7 @@ namespace CursoWindowsFormsBiblioteca
             [Required(ErrorMessage = "Nome da Mãe é obrigatório.")]
             [StringLength(50, ErrorMessage = "Nome da Mãe deve ter no máximo 50 caracteres.")]
             public string NomeMae { get; set; }
-                        
+
             public bool NaoTemPai { get; set; }
 
             [Required(ErrorMessage = "CPF obrigatório.")]
@@ -67,8 +68,8 @@ namespace CursoWindowsFormsBiblioteca
             [Required(ErrorMessage = "Número do telefone é obrigatório.")]
             [RegularExpression("([0-9]+)", ErrorMessage = "Número do telefone somente aceita valores numéricos.")]
             public string Telefone { get; set; }
-            
-            
+
+
             public string Profissao { get; set; }
 
             [Required(ErrorMessage = "Renda familiar é obrigatória.")]
@@ -111,6 +112,88 @@ namespace CursoWindowsFormsBiblioteca
                     throw new Exception("CPF inválido.");
                 }
             }
+
+            public void IncluirFichario(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario F = new Fichario(Conexao);
+                if (F.Status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!F.Status)
+                    {
+                        throw new Exception(F.Mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.Mensagem);
+                }
+            }
+
+            public Unit BuscarFichario(string id, string Conexao)
+            {
+                Fichario F = new Fichario(Conexao);                
+                if (F.Status)
+                {
+                    string clienteJson = F.Buscar(id);
+                    return DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.Mensagem);
+                }
+            }
+
+            public void AlterarFichario(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario F = new Fichario(Conexao);
+                if (F.Status)
+                {
+                    F.Alterar(this.Id, clienteJson);
+                    if (!F.Status)
+                    {
+                        throw new Exception(F.Mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.Mensagem);
+                }
+            }
+
+            public void ApagarFichario(string Conexao)
+            {
+                Fichario F = new Fichario(Conexao);
+                if (F.Status)
+                {
+                    F.Apagar(this.Id);
+                    if (!F.Status)
+                    {
+                        throw new Exception(F.Mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.Mensagem);
+                }
+            }
+
+            public List<string> ListaFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.Status)
+                {
+                    return F.BuscarTodos();
+                }
+                else
+                {
+                    throw new Exception(F.Mensagem);
+                }
+                
+            }
+
         }
 
         public class List
@@ -127,5 +210,7 @@ namespace CursoWindowsFormsBiblioteca
         {
             return JsonConvert.SerializeObject(unit);
         }
+
+
     }
 }
