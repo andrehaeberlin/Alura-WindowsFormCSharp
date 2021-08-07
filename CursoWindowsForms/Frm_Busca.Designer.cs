@@ -1,5 +1,4 @@
-﻿
-namespace CursoWindowsForms
+﻿namespace CursoWindowsForms
 {
     partial class Frm_Busca
     {
@@ -31,10 +30,8 @@ namespace CursoWindowsForms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Busca));
             this.Tls_Principal = new System.Windows.Forms.ToolStrip();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.apagarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ApagatoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Lst_Busca = new System.Windows.Forms.ListBox();
             this.Tls_Principal.SuspendLayout();
             this.SuspendLayout();
@@ -42,45 +39,33 @@ namespace CursoWindowsForms
             // Tls_Principal
             // 
             this.Tls_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripButton,
-            this.apagarToolStripButton,
-            this.toolStripSeparator,
-            this.toolStripSeparator1});
+            this.salvarToolStripButton,
+            this.ApagatoolStripButton});
             this.Tls_Principal.Location = new System.Drawing.Point(0, 0);
             this.Tls_Principal.Name = "Tls_Principal";
             this.Tls_Principal.Size = new System.Drawing.Size(345, 25);
-            this.Tls_Principal.TabIndex = 34;
+            this.Tls_Principal.TabIndex = 57;
             this.Tls_Principal.Text = "toolStrip1";
             // 
-            // saveToolStripButton
+            // salvarToolStripButton
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "&Save";
-            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
+            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.salvarToolStripButton.Name = "salvarToolStripButton";
+            this.salvarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.salvarToolStripButton.Text = "&Salvar";
+            this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
             // 
-            // apagarToolStripButton
+            // ApagatoolStripButton
             // 
-            this.apagarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.apagarToolStripButton.Image = global::CursoWindowsForms.Properties.Resources.ExcluirBarra;
-            this.apagarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.apagarToolStripButton.Name = "apagarToolStripButton";
-            this.apagarToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.apagarToolStripButton.Text = "toolStripButton1";
-            this.apagarToolStripButton.Click += new System.EventHandler(this.apagarToolStripButton_Click);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.ApagatoolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ApagatoolStripButton.Image = global::CursoWindowsForms.Properties.Resources.ExcluirBarra;
+            this.ApagatoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ApagatoolStripButton.Name = "ApagatoolStripButton";
+            this.ApagatoolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.ApagatoolStripButton.Text = "toolStripButton1";
+            this.ApagatoolStripButton.Click += new System.EventHandler(this.ApagatoolStripButton_Click);
             // 
             // Lst_Busca
             // 
@@ -88,7 +73,7 @@ namespace CursoWindowsForms
             this.Lst_Busca.Location = new System.Drawing.Point(12, 37);
             this.Lst_Busca.Name = "Lst_Busca";
             this.Lst_Busca.Size = new System.Drawing.Size(321, 264);
-            this.Lst_Busca.TabIndex = 35;
+            this.Lst_Busca.TabIndex = 58;
             // 
             // Frm_Busca
             // 
@@ -113,10 +98,8 @@ namespace CursoWindowsForms
         #endregion
 
         private System.Windows.Forms.ToolStrip Tls_Principal;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton apagarToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
+        private System.Windows.Forms.ToolStripButton ApagatoolStripButton;
         private System.Windows.Forms.ListBox Lst_Busca;
     }
 }

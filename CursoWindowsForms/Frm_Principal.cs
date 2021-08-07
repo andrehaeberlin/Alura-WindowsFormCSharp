@@ -52,6 +52,6 @@ namespace CursoWindowsForms
         {
             Frm_ValidaSenha f = new Frm_ValidaSenha();
             f.ShowDialog();
-        }       
+        }
     }
 }

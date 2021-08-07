@@ -1,14 +1,48 @@
 ﻿using System;
-using System.IO;
-using System.Net;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Newtonsoft;
+using System.Threading.Tasks;
+using System.Net;
+using System.IO;
+
 
 namespace CursoWindowsFormsBiblioteca
 {
     public class Cls_Uteis
     {
+
+        public static bool validaSenhaLogin(string senha)
+        {
+            if (senha == "curso")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static string GeraJSONCEP(string CEP)
+        {
+            System.Net.HttpWebRequest requisicao = (HttpWebRequest)WebRequest.Create("https://viacep.com.br/ws/" + CEP + "/json/");
+            HttpWebResponse resposta = (HttpWebResponse)requisicao.GetResponse();
+
+            int cont;
+            byte[] buffer = new byte[1000];
+            StringBuilder sb = new StringBuilder();
+            string temp;
+            Stream stream = resposta.GetResponseStream();
+            do
+            {
+                cont = stream.Read(buffer, 0, buffer.Length);
+                temp = Encoding.Default.GetString(buffer, 0, cont).Trim();
+                sb.Append(temp);
+
+            } while (cont > 0);
+            return sb.ToString();
+
+        }
+
         public static bool Valida(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -18,7 +52,7 @@ namespace CursoWindowsFormsBiblioteca
             int soma;
             int resto;
             cpf = cpf.Trim();
-            cpf = cpf.Replace(".", "").Replace("-", "").Replace(",", "");
+            cpf = cpf.Replace(".", "").Replace("-", "");
             if (cpf.Length != 11)
                 return false;
             tempCpf = cpf.Substring(0, 9);
@@ -68,7 +102,6 @@ namespace CursoWindowsFormsBiblioteca
                 return pontosPorTamanho + pontosPorMinusculas + pontosPorMaiusculas + pontosPorDigitos + pontosPorSimbolos - pontosPorRepeticao;
             }
 
-
             private int GetPontoPorTamanho(string senha)
             {
                 return Math.Min(10, senha.Length) * 7;
@@ -112,6 +145,7 @@ namespace CursoWindowsFormsBiblioteca
                 }
             }
 
+
             public ForcaDaSenha GetForcaDaSenha(string senha)
             {
                 int placar = geraPontosSenha(senha);
@@ -127,27 +161,6 @@ namespace CursoWindowsFormsBiblioteca
                 else
                     return ForcaDaSenha.Segura;
             }
-        }
-
-        public static string GeraJSONCEP(string CEP)
-        {
-            System.Net.HttpWebRequest requisicao = (HttpWebRequest)WebRequest.Create("https://viacep.com.br/ws/" + CEP + "/json/");
-            HttpWebResponse resposta = (HttpWebResponse)requisicao.GetResponse();
-
-            int cont;
-            byte[] buffer = new byte[1000];
-            StringBuilder sb = new StringBuilder();
-            string temp;
-            Stream stream = resposta.GetResponseStream();
-            do
-            {
-                cont = stream.Read(buffer, 0, buffer.Length);
-                temp = Encoding.UTF8.GetString(buffer, 0, cont).Trim();
-                sb.Append(temp);
-
-            } while (cont > 0);
-            return sb.ToString();
-
         }
 
     }

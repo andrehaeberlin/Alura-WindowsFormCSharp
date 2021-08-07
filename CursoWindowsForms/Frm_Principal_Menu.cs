@@ -17,13 +17,19 @@ namespace CursoWindowsForms
             InitializeComponent();
         }
 
+        private void validaCPFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ValidaCPF f = new Frm_ValidaCPF();
+            f.ShowDialog();
+        }
+
         private void demonstraçãoKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_DemonstracaoKey f = new Frm_DemonstracaoKey();
             f.ShowDialog();
         }
 
-        private void helloWordToolStripMenuItem_Click(object sender, EventArgs e)
+        private void helloWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_HelloWorld f = new Frm_HelloWorld();
             f.ShowDialog();
@@ -35,19 +41,13 @@ namespace CursoWindowsForms
             f.ShowDialog();
         }
 
-        private void validaCPFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_ValidaCPF f = new Frm_ValidaCPF();
-            f.ShowDialog();
-        }
-
-        private void validaCPF2ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void valídaCPF2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_ValidaCPF2 f = new Frm_ValidaCPF2();
             f.ShowDialog();
         }
 
-        private void validaSenhaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void valídaSenhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_ValidaSenha f = new Frm_ValidaSenha();
             f.ShowDialog();
@@ -55,7 +55,7 @@ namespace CursoWindowsForms
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
     }
 }

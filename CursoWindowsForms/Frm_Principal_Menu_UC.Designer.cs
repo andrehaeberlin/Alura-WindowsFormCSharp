@@ -36,12 +36,12 @@
             this.desconectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.demonstraçãoKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helloWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helloWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mascaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.validaCPFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.validaCPF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.validaSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apagarTabPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valídaCPF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valídaSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apagarAbaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byteBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +49,8 @@
             this.açõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirImagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tbc_Principal = new System.Windows.Forms.TabControl();
-            this.Iml_Principal = new System.Windows.Forms.ImageList(this.components);
+            this.Tbc_Aplicacoes = new System.Windows.Forms.TabControl();
+            this.Iml_Imagens = new System.Windows.Forms.ImageList(this.components);
             this.Mnu_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.Mnu_Principal.Location = new System.Drawing.Point(0, 0);
             this.Mnu_Principal.Name = "Mnu_Principal";
             this.Mnu_Principal.Size = new System.Drawing.Size(800, 24);
-            this.Mnu_Principal.TabIndex = 7;
+            this.Mnu_Principal.TabIndex = 0;
             this.Mnu_Principal.Text = "menuStrip1";
             // 
             // arquivoToolStripMenuItem
@@ -73,7 +73,7 @@
             this.conectarToolStripMenuItem,
             this.desconectarToolStripMenuItem,
             this.novoToolStripMenuItem,
-            this.apagarTabPageToolStripMenuItem,
+            this.apagarAbaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -82,14 +82,14 @@
             // conectarToolStripMenuItem
             // 
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.conectarToolStripMenuItem.Text = "Conectar";
             this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 
             this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
-            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.desconectarToolStripMenuItem.Text = "Desconectar";
             this.desconectarToolStripMenuItem.Click += new System.EventHandler(this.desconectarToolStripMenuItem_Click);
             // 
@@ -97,13 +97,13 @@
             // 
             this.novoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.demonstraçãoKeyToolStripMenuItem,
-            this.helloWordToolStripMenuItem,
+            this.helloWorldToolStripMenuItem,
             this.mascaraToolStripMenuItem,
             this.validaCPFToolStripMenuItem,
-            this.validaCPF2ToolStripMenuItem,
-            this.validaSenhaToolStripMenuItem});
+            this.valídaCPF2ToolStripMenuItem,
+            this.valídaSenhaToolStripMenuItem});
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
             // demonstraçãoKeyToolStripMenuItem
@@ -115,14 +115,14 @@
             this.demonstraçãoKeyToolStripMenuItem.Text = "Demonstração &Key";
             this.demonstraçãoKeyToolStripMenuItem.Click += new System.EventHandler(this.demonstraçãoKeyToolStripMenuItem_Click);
             // 
-            // helloWordToolStripMenuItem
+            // helloWorldToolStripMenuItem
             // 
-            this.helloWordToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Frm_HelloWorld;
-            this.helloWordToolStripMenuItem.Name = "helloWordToolStripMenuItem";
-            this.helloWordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
-            this.helloWordToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.helloWordToolStripMenuItem.Text = "Hello &Word";
-            this.helloWordToolStripMenuItem.Click += new System.EventHandler(this.helloWordToolStripMenuItem_Click);
+            this.helloWorldToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Frm_HelloWorld;
+            this.helloWorldToolStripMenuItem.Name = "helloWorldToolStripMenuItem";
+            this.helloWorldToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
+            this.helloWorldToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.helloWorldToolStripMenuItem.Text = "Hello &World";
+            this.helloWorldToolStripMenuItem.Click += new System.EventHandler(this.helloWorldToolStripMenuItem_Click);
             // 
             // mascaraToolStripMenuItem
             // 
@@ -139,38 +139,38 @@
             this.validaCPFToolStripMenuItem.Name = "validaCPFToolStripMenuItem";
             this.validaCPFToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
             this.validaCPFToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.validaCPFToolStripMenuItem.Text = "Valida &CPF";
+            this.validaCPFToolStripMenuItem.Text = "Valída &CPF";
             this.validaCPFToolStripMenuItem.Click += new System.EventHandler(this.validaCPFToolStripMenuItem_Click);
             // 
-            // validaCPF2ToolStripMenuItem
+            // valídaCPF2ToolStripMenuItem
             // 
-            this.validaCPF2ToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Frm_ValidaCPF2;
-            this.validaCPF2ToolStripMenuItem.Name = "validaCPF2ToolStripMenuItem";
-            this.validaCPF2ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
-            this.validaCPF2ToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.validaCPF2ToolStripMenuItem.Text = "Valida C&PF 2";
-            this.validaCPF2ToolStripMenuItem.Click += new System.EventHandler(this.validaCPF2ToolStripMenuItem_Click);
+            this.valídaCPF2ToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Frm_ValidaCPF2;
+            this.valídaCPF2ToolStripMenuItem.Name = "valídaCPF2ToolStripMenuItem";
+            this.valídaCPF2ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
+            this.valídaCPF2ToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.valídaCPF2ToolStripMenuItem.Text = "Valída C&PF 2";
+            this.valídaCPF2ToolStripMenuItem.Click += new System.EventHandler(this.valídaCPF2ToolStripMenuItem_Click);
             // 
-            // validaSenhaToolStripMenuItem
+            // valídaSenhaToolStripMenuItem
             // 
-            this.validaSenhaToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Frm_ValidaSenha;
-            this.validaSenhaToolStripMenuItem.Name = "validaSenhaToolStripMenuItem";
-            this.validaSenhaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.validaSenhaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.validaSenhaToolStripMenuItem.Text = "Valida &Senha";
-            this.validaSenhaToolStripMenuItem.Click += new System.EventHandler(this.validaSenhaToolStripMenuItem_Click);
+            this.valídaSenhaToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Frm_ValidaSenha;
+            this.valídaSenhaToolStripMenuItem.Name = "valídaSenhaToolStripMenuItem";
+            this.valídaSenhaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.valídaSenhaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.valídaSenhaToolStripMenuItem.Text = "Valída &Senha";
+            this.valídaSenhaToolStripMenuItem.Click += new System.EventHandler(this.valídaSenhaToolStripMenuItem_Click);
             // 
-            // apagarTabPageToolStripMenuItem
+            // apagarAbaToolStripMenuItem
             // 
-            this.apagarTabPageToolStripMenuItem.Name = "apagarTabPageToolStripMenuItem";
-            this.apagarTabPageToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.apagarTabPageToolStripMenuItem.Text = "Apagar TabPage";
-            this.apagarTabPageToolStripMenuItem.Click += new System.EventHandler(this.apagarTabPageToolStripMenuItem_Click);
+            this.apagarAbaToolStripMenuItem.Name = "apagarAbaToolStripMenuItem";
+            this.apagarAbaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.apagarAbaToolStripMenuItem.Text = "Apagar Aba";
+            this.apagarAbaToolStripMenuItem.Click += new System.EventHandler(this.apagarAbaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -189,14 +189,14 @@
             this.clientesToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.Cadastros;
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Image = global::CursoWindowsForms.Properties.Resources.user;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -221,39 +221,41 @@
             this.windowsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.windowsToolStripMenuItem.Text = "Windows";
             // 
-            // Tbc_Principal
+            // Tbc_Aplicacoes
             // 
-            this.Tbc_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Tbc_Principal.ImageList = this.Iml_Principal;
-            this.Tbc_Principal.Location = new System.Drawing.Point(0, 24);
-            this.Tbc_Principal.Name = "Tbc_Principal";
-            this.Tbc_Principal.SelectedIndex = 0;
-            this.Tbc_Principal.Size = new System.Drawing.Size(800, 626);
-            this.Tbc_Principal.TabIndex = 8;
-            this.Tbc_Principal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Principal_MouseDown);
+            this.Tbc_Aplicacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbc_Aplicacoes.ImageList = this.Iml_Imagens;
+            this.Tbc_Aplicacoes.Location = new System.Drawing.Point(0, 24);
+            this.Tbc_Aplicacoes.Name = "Tbc_Aplicacoes";
+            this.Tbc_Aplicacoes.SelectedIndex = 0;
+            this.Tbc_Aplicacoes.Size = new System.Drawing.Size(800, 426);
+            this.Tbc_Aplicacoes.TabIndex = 1;
+            this.Tbc_Aplicacoes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Aplicacoes_MouseDown);
             // 
-            // Iml_Principal
+            // Iml_Imagens
             // 
-            this.Iml_Principal.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Iml_Principal.ImageStream")));
-            this.Iml_Principal.TransparentColor = System.Drawing.Color.Transparent;
-            this.Iml_Principal.Images.SetKeyName(0, "Frm_DemonstracaoKey.png");
-            this.Iml_Principal.Images.SetKeyName(1, "Frm_HelloWorld.png");
-            this.Iml_Principal.Images.SetKeyName(2, "Frm_Mascara.png");
-            this.Iml_Principal.Images.SetKeyName(3, "Frm_ValidaCPF.png");
-            this.Iml_Principal.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
-            this.Iml_Principal.Images.SetKeyName(5, "Frm_ValidaSenha.png");
-            this.Iml_Principal.Images.SetKeyName(6, "Folder_Icon.png");
-            this.Iml_Principal.Images.SetKeyName(7, "user.png");
+            this.Iml_Imagens.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Iml_Imagens.ImageStream")));
+            this.Iml_Imagens.TransparentColor = System.Drawing.Color.Transparent;
+            this.Iml_Imagens.Images.SetKeyName(0, "Frm_DemonstracaoKey.png");
+            this.Iml_Imagens.Images.SetKeyName(1, "Frm_HelloWorld.png");
+            this.Iml_Imagens.Images.SetKeyName(2, "Frm_Mascara.png");
+            this.Iml_Imagens.Images.SetKeyName(3, "Frm_ValidaCPF.png");
+            this.Iml_Imagens.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
+            this.Iml_Imagens.Images.SetKeyName(5, "Frm_ValidaSenha.png");
+            this.Iml_Imagens.Images.SetKeyName(6, "icons8-live-folder-80.png");
+            this.Iml_Imagens.Images.SetKeyName(7, "user.png");
             // 
             // Frm_Principal_Menu_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 650);
-            this.Controls.Add(this.Tbc_Principal);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Tbc_Aplicacoes);
             this.Controls.Add(this.Mnu_Principal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.Mnu_Principal;
             this.Name = "Frm_Principal_Menu_UC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Mnu_Principal.ResumeLayout(false);
             this.Mnu_Principal.PerformLayout();
@@ -268,16 +270,16 @@
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem demonstraçãoKeyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helloWordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helloWorldToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mascaraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem validaCPFToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem validaCPF2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem validaSenhaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valídaCPF2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
-        private System.Windows.Forms.TabControl Tbc_Principal;
-        private System.Windows.Forms.ImageList Iml_Principal;
-        private System.Windows.Forms.ToolStripMenuItem apagarTabPageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valídaSenhaToolStripMenuItem;
+        private System.Windows.Forms.TabControl Tbc_Aplicacoes;
+        private System.Windows.Forms.ImageList Iml_Imagens;
+        private System.Windows.Forms.ToolStripMenuItem apagarAbaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem açõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirImagemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
