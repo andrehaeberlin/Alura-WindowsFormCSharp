@@ -127,11 +127,11 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                C.IncluirFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                C.IncluirFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                 MessageBox.Show("OK: Indentificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //string clienteJson = Cliente.SerializedClassUnit(C);
-                //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                 //if (F.status)
                 //{
                 //    F.Incluir(C.Id, clienteJson);
@@ -171,7 +171,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -182,7 +182,7 @@ namespace CursoWindowsForms
                     }
                   
 
-                    //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                     //if (F.status)
                     //{
                     //    string clienteJson = F.Buscar(Txt_Codigo.Text);
@@ -217,11 +217,11 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C.AlterarFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                     MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //string clienteJson = Cliente.SerializedClassUnit(C);
-                    //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                     //if (F.status)
                     //{
                     //    F.Alterar(C.Id, clienteJson);
@@ -263,7 +263,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");              
+                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");              
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -275,7 +275,7 @@ namespace CursoWindowsForms
                         Db.ShowDialog();
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                            C.ApagarFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
                         }
@@ -289,7 +289,7 @@ namespace CursoWindowsForms
 
                
          
-                //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                 //if (F.status)
                 //{
                 //    string clienteJson = F.Buscar(Txt_Codigo.Text);
@@ -481,13 +481,13 @@ namespace CursoWindowsForms
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
-                var ListaBusca = C.BuscarFicharioTodos("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                var ListaBusca = C.BuscarFicharioTodos("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                 Frm_Busca FForm = new Frm_Busca(ListaBusca);
                 FForm.ShowDialog();
                 if (FForm.DialogResult == DialogResult.OK)
                 {
                     var idSelect = FForm.idSelect;
-                    C = C.BuscarFichario(idSelect, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C = C.BuscarFichario(idSelect, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -503,7 +503,7 @@ namespace CursoWindowsForms
                 MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+            //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
             //if (F.status)
             //{
             //    List<string> List = new List<string>();
