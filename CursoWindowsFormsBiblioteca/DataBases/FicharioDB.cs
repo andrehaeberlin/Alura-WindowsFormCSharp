@@ -44,7 +44,7 @@ namespace CursoWindowsFormsBiblioteca.Databases
 
                 // INSERT INTO CLIENTE (ID, JSON) VALUES ('000001', '{...}')
 
-                var SQL = "INSERT INTO" + tabela + "(Id, JSON) VALUES('" + Id + "', '" + jsonUnit + "')";
+                var SQL = "INSERT INTO " + tabela + "(Id, JSON) VALUES('" + Id + "', '" + jsonUnit + "')";
                 db.SQLCommand(SQL);
                 mensagem = "Inclusão efetuada com sucesso.";
 
@@ -141,7 +141,8 @@ namespace CursoWindowsFormsBiblioteca.Databases
                 if (dt.Rows.Count > 0)
                 {
                     //DELETE FROM CLIENTE WHERE ID =  '000001'
-                    SQL = "DELETE FROM " + tabela + " WHERE ID = '" + Id + "'";                    
+                    SQL = "DELETE FROM " + tabela + " WHERE ID = '" + Id + "'";
+                    db.SQLCommand(SQL);
                     status = true;
                     mensagem = "Usuário apagado com sucesso. Identificador: " + Id;                    
                 }
@@ -176,6 +177,7 @@ namespace CursoWindowsFormsBiblioteca.Databases
                 {
                     //UPDATE CLIENTE SET JSON = '{...}' WHERE ID =  '000001'
                     SQL = "UPDATE " + tabela + " SET JSON = '" + jsonUnit + "' WHERE ID = '" + Id + "'";
+                    db.SQLCommand(SQL);
                     status = true;
                     mensagem = "Usuário alterado com sucesso. Identificador: " + Id;
                 }
