@@ -128,7 +128,8 @@ namespace CursoWindowsForms
                 C.ValidaClasse();
                 C.ValidaComplemento();
                 //C.IncluirFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
-                C.IncluirFicharioDB("Cliente");
+                //C.IncluirFicharioDB("Cliente");
+                C.IncluirFicharioSQL("Cliente");
                 MessageBox.Show("OK: Indentificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //string clienteJson = Cliente.SerializedClassUnit(C);
@@ -173,7 +174,8 @@ namespace CursoWindowsForms
                 {
                     Cliente.Unit C = new Cliente.Unit();
                     //C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
-                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    //C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -220,7 +222,8 @@ namespace CursoWindowsForms
                     C.ValidaClasse();
                     C.ValidaComplemento();
                     //C.AlterarFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
-                    C.AlterarFicharioDB("Cliente");
+                    //C.AlterarFicharioDB("Cliente");
+                    C.AlterarFicharioSQL("Cliente");
                     MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //string clienteJson = Cliente.SerializedClassUnit(C);
@@ -267,7 +270,8 @@ namespace CursoWindowsForms
                 {
                     Cliente.Unit C = new Cliente.Unit();
                     //C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
-                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    //C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -279,7 +283,8 @@ namespace CursoWindowsForms
                         Db.ShowDialog();
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFicharioDB("Cliente");
+                            C.ApagarFicharioSQL("Cliente");
+                            //C.ApagarFicharioDB("Cliente");
                             //C.ApagarFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
@@ -487,14 +492,16 @@ namespace CursoWindowsForms
             {
                 Cliente.Unit C = new Cliente.Unit();
                 //var ListaBusca = C.BuscarFicharioTodos("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
-                var ListaBusca = C.BuscarFicharioDBTodosDB("Cliente");
+                //var ListaBusca = C.BuscarFicharioDBTodosDB("Cliente");
+                var ListaBusca = C.BuscarFicharioSQLTodosSQLServer("Cliente");
                 Frm_Busca FForm = new Frm_Busca(ListaBusca);
                 FForm.ShowDialog();
                 if (FForm.DialogResult == DialogResult.OK)
                 {
                     var idSelect = FForm.idSelect;
                     //C = C.BuscarFichario(idSelect, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
-                    C = C.BuscarFicharioDB(idSelect, "Cliente");
+                    //C = C.BuscarFicharioDB(idSelect, "Cliente");
+                    C = C.BuscarFicharioSQL(idSelect, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
