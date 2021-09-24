@@ -80,6 +80,8 @@ namespace CursoWindowsForms
 
             Btn_Busca.Text = "Buscar";
 
+            AtualizaGrid();
+
             LimparFormulario();
 
         }
@@ -111,9 +113,9 @@ namespace CursoWindowsForms
             {
                 Txt_NomePai.Enabled = false;
             }
-            else 
-            { 
-                Txt_NomePai.Enabled = true; 
+            else
+            {
+                Txt_NomePai.Enabled = true;
             }
         }
 
@@ -165,11 +167,11 @@ namespace CursoWindowsForms
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
-           if (Txt_Codigo.Text == "")
+            if (Txt_Codigo.Text == "")
             {
                 MessageBox.Show("Código do Cliente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           else
+            else
             {
                 try
                 {
@@ -186,7 +188,7 @@ namespace CursoWindowsForms
                     {
                         EscreveFormulario(C);
                     }
-                  
+
 
                     //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                     //if (F.status)
@@ -205,7 +207,7 @@ namespace CursoWindowsForms
                 {
                     MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-               
+
             }
         }
 
@@ -302,8 +304,8 @@ namespace CursoWindowsForms
                 }
 
 
-               
-         
+
+
                 //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
                 //if (F.status)
                 //{
@@ -390,7 +392,7 @@ namespace CursoWindowsForms
             if (Information.IsNumeric(Txt_RendaFamiliar.Text))
             {
                 Double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
-                if (vRenda < 0 )
+                if (vRenda < 0)
                 {
                     C.RendaFamiliar = 0;
                 }
@@ -399,7 +401,7 @@ namespace CursoWindowsForms
                     C.RendaFamiliar = vRenda;
                 }
             }
-           
+
             return C;
         }
 
@@ -407,8 +409,8 @@ namespace CursoWindowsForms
         {
             Txt_Codigo.Text = C.Id;
             Txt_NomeCliente.Text = C.Nome;
-            Txt_NomeMae.Text  = C.NomeMae;
-            
+            Txt_NomeMae.Text = C.NomeMae;
+
             if (C.NaoTemPai == 1)
             {
                 Chk_TemPai.Checked = true;
@@ -433,22 +435,22 @@ namespace CursoWindowsForms
                 Rdb_Indefinido.Checked = true;
             }
 
-            Txt_CPF.Text  = C.Cpf;
-            Txt_CEP.Text  = C.Cep;
-            Txt_Logradouro.Text  = C.Logradouro;
-            Txt_Complemento.Text  = C.Complemento;
-            Txt_Cidade.Text  = C.Cidade;
+            Txt_CPF.Text = C.Cpf;
+            Txt_CEP.Text = C.Cep;
+            Txt_Logradouro.Text = C.Logradouro;
+            Txt_Complemento.Text = C.Complemento;
+            Txt_Cidade.Text = C.Cidade;
             Txt_Bairro.Text = C.Bairro;
-            Txt_Telefone.Text  = C.Telefone;
-            Txt_Profissao.Text  = C.Profissao;
+            Txt_Telefone.Text = C.Telefone;
+            Txt_Profissao.Text = C.Profissao;
 
-            if (C.Estado == "" )
+            if (C.Estado == "")
             {
                 Cmb_Estados.SelectedIndex = -1;
             }
             else
             {
-                for (int i=0; i <= Cmb_Estados.Items.Count -1; i++)
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
                 {
                     if (C.Estado == Cmb_Estados.Items[i].ToString())
                     {
@@ -558,6 +560,60 @@ namespace CursoWindowsForms
             //    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
 
+        }
+
+        private void AtualizaGrid()
+        {
+            try
+            {
+                Cliente.Unit C = new Cliente.Unit();
+                //var ListaBusca = C.BuscarFicharioTodos("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                //var ListaBusca = C.BuscarFicharioDBTodosDB("Cliente");
+                //var ListaBusca = C.BuscarFicharioDBTodosSQL("Cliente");
+                var ListaBusca = C.BuscarFicharioDBTodosSQLREL();
+                Dg_Clientes.Rows.Clear();
+                for (int i = 0; i <= ListaBusca.Count - 1; i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(Dg_Clientes);
+                    row.Cells[0].Value = ListaBusca[i][0].ToString();
+                    row.Cells[1].Value = ListaBusca[i][1].ToString();
+                    Dg_Clientes.Rows.Add(row);
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dg_Clientes_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = Dg_Clientes.SelectedRows[0];
+                string Id = row.Cells[0].Value.ToString();
+
+                Cliente.Unit C = new Cliente.Unit();
+                //C = C.BuscarFicharioDB(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                //C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                //C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
+                C = C.BuscarFicharioSQLREL(Id);
+                if (C == null)
+                {
+                    MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    EscreveFormulario(C);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

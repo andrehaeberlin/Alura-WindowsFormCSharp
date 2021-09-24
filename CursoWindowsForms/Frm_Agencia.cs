@@ -19,6 +19,11 @@ namespace CursoWindowsForms
             Tls_Agencia.Items[0].ToolTipText = "Fechar a caixa de diálogo";
         }
 
+        private void ApagatoolStripButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void tB_AgenciaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -33,5 +38,7 @@ namespace CursoWindowsForms
             this.tB_AgenciaTableAdapter.Fill(this.byteBankDataSet.TB_Agencia);
 
         }
+
+
     }
 }

@@ -67,7 +67,7 @@ namespace CursoWindowsForms
             this.ApagatoolStripButton});
             this.Tls_Agencia.Location = new System.Drawing.Point(0, 0);
             this.Tls_Agencia.Name = "Tls_Agencia";
-            this.Tls_Agencia.Size = new System.Drawing.Size(411, 25);
+            this.Tls_Agencia.Size = new System.Drawing.Size(480, 25);
             this.Tls_Agencia.TabIndex = 57;
             this.Tls_Agencia.Text = "toolStrip1";
             // 
@@ -79,6 +79,7 @@ namespace CursoWindowsForms
             this.ApagatoolStripButton.Name = "ApagatoolStripButton";
             this.ApagatoolStripButton.Size = new System.Drawing.Size(23, 22);
             this.ApagatoolStripButton.Text = "toolStripButton1";
+            this.ApagatoolStripButton.Click += new System.EventHandler(this.ApagatoolStripButton_Click);
             // 
             // byteBankDataSet
             // 
@@ -128,7 +129,7 @@ namespace CursoWindowsForms
             this.tB_AgenciaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tB_AgenciaBindingNavigator.Name = "tB_AgenciaBindingNavigator";
             this.tB_AgenciaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tB_AgenciaBindingNavigator.Size = new System.Drawing.Size(411, 25);
+            this.tB_AgenciaBindingNavigator.Size = new System.Drawing.Size(480, 25);
             this.tB_AgenciaBindingNavigator.TabIndex = 58;
             this.tB_AgenciaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -236,7 +237,7 @@ namespace CursoWindowsForms
             this.tB_AgenciaDataGridView.DataSource = this.tB_AgenciaBindingSource;
             this.tB_AgenciaDataGridView.Location = new System.Drawing.Point(12, 75);
             this.tB_AgenciaDataGridView.Name = "tB_AgenciaDataGridView";
-            this.tB_AgenciaDataGridView.Size = new System.Drawing.Size(379, 220);
+            this.tB_AgenciaDataGridView.Size = new System.Drawing.Size(456, 220);
             this.tB_AgenciaDataGridView.TabIndex = 58;
             // 
             // dataGridViewTextBoxColumn1
@@ -260,7 +261,7 @@ namespace CursoWindowsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 320);
+            this.ClientSize = new System.Drawing.Size(480, 320);
             this.Controls.Add(this.tB_AgenciaDataGridView);
             this.Controls.Add(this.tB_AgenciaBindingNavigator);
             this.Controls.Add(this.Tls_Agencia);
