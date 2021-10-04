@@ -79,7 +79,7 @@ namespace CursoWindowsForms
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
 
             Btn_Busca.Text = "Buscar";
-
+            Grp_DataGrid.Text = "Clientes";
             AtualizaGrid();
 
             LimparFormulario();
@@ -113,9 +113,9 @@ namespace CursoWindowsForms
             {
                 Txt_NomePai.Enabled = false;
             }
-            else
-            {
-                Txt_NomePai.Enabled = true;
+            else 
+            { 
+                Txt_NomePai.Enabled = true; 
             }
         }
 
@@ -129,14 +129,15 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                //C.IncluirFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                //C.IncluirFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                 //C.IncluirFicharioDB("Cliente");
                 //C.IncluirFicharioSQL("Cliente");
                 C.IncluirFicharioSQLREL();
                 MessageBox.Show("OK: Indentificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AtualizaGrid();
 
                 //string clienteJson = Cliente.SerializedClassUnit(C);
-                //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                 //if (F.status)
                 //{
                 //    F.Incluir(C.Id, clienteJson);
@@ -167,16 +168,16 @@ namespace CursoWindowsForms
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
-            if (Txt_Codigo.Text == "")
+           if (Txt_Codigo.Text == "")
             {
                 MessageBox.Show("Código do Cliente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+           else
             {
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    //C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                    //C = C.BuscarFicharioDB(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                     //C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
                     //C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
                     C = C.BuscarFicharioSQLREL(Txt_Codigo.Text);
@@ -188,9 +189,9 @@ namespace CursoWindowsForms
                     {
                         EscreveFormulario(C);
                     }
+                  
 
-
-                    //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                    //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                     //if (F.status)
                     //{
                     //    string clienteJson = F.Buscar(Txt_Codigo.Text);
@@ -207,7 +208,7 @@ namespace CursoWindowsForms
                 {
                     MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
+               
             }
         }
 
@@ -225,14 +226,15 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    //C.AlterarFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                    //C.AlterarFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                     //C.AlterarFicharioDB("Cliente");
                     //C.AlterarFicharioSQL("Cliente");
                     C.AlterarFicharioSQLREL();
                     MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizaGrid();
 
                     //string clienteJson = Cliente.SerializedClassUnit(C);
-                    //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                    //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                     //if (F.status)
                     //{
                     //    F.Alterar(C.Id, clienteJson);
@@ -274,7 +276,7 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    //C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                    //C = C.BuscarFichario(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                     //C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
                     //C = C.BuscarFicharioSQL(Txt_Codigo.Text, "Cliente");
                     C = C.BuscarFicharioSQLREL(Txt_Codigo.Text);
@@ -289,11 +291,12 @@ namespace CursoWindowsForms
                         Db.ShowDialog();
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFicharioSQLREL();
-                            //C.ApagarFicharioSQL("Cliente");
+                            //C.ApagarFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                             //C.ApagarFicharioDB("Cliente");
-                            //C.ApagarFichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                            //C.ApagarFicharioSQL("Cliente");
+                            C.ApagarFicharioSQLREL();
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizaGrid();
                             LimparFormulario();
                         }
                     }
@@ -304,9 +307,9 @@ namespace CursoWindowsForms
                 }
 
 
-
-
-                //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+               
+         
+                //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                 //if (F.status)
                 //{
                 //    string clienteJson = F.Buscar(Txt_Codigo.Text);
@@ -392,7 +395,7 @@ namespace CursoWindowsForms
             if (Information.IsNumeric(Txt_RendaFamiliar.Text))
             {
                 Double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
-                if (vRenda < 0)
+                if (vRenda < 0 )
                 {
                     C.RendaFamiliar = 0;
                 }
@@ -401,7 +404,7 @@ namespace CursoWindowsForms
                     C.RendaFamiliar = vRenda;
                 }
             }
-
+           
             return C;
         }
 
@@ -409,8 +412,8 @@ namespace CursoWindowsForms
         {
             Txt_Codigo.Text = C.Id;
             Txt_NomeCliente.Text = C.Nome;
-            Txt_NomeMae.Text = C.NomeMae;
-
+            Txt_NomeMae.Text  = C.NomeMae;
+            
             if (C.NaoTemPai == 1)
             {
                 Chk_TemPai.Checked = true;
@@ -435,22 +438,22 @@ namespace CursoWindowsForms
                 Rdb_Indefinido.Checked = true;
             }
 
-            Txt_CPF.Text = C.Cpf;
-            Txt_CEP.Text = C.Cep;
-            Txt_Logradouro.Text = C.Logradouro;
-            Txt_Complemento.Text = C.Complemento;
-            Txt_Cidade.Text = C.Cidade;
+            Txt_CPF.Text  = C.Cpf;
+            Txt_CEP.Text  = C.Cep;
+            Txt_Logradouro.Text  = C.Logradouro;
+            Txt_Complemento.Text  = C.Complemento;
+            Txt_Cidade.Text  = C.Cidade;
             Txt_Bairro.Text = C.Bairro;
-            Txt_Telefone.Text = C.Telefone;
-            Txt_Profissao.Text = C.Profissao;
+            Txt_Telefone.Text  = C.Telefone;
+            Txt_Profissao.Text  = C.Profissao;
 
-            if (C.Estado == "")
+            if (C.Estado == "" )
             {
                 Cmb_Estados.SelectedIndex = -1;
             }
             else
             {
-                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                for (int i=0; i <= Cmb_Estados.Items.Count -1; i++)
                 {
                     if (C.Estado == Cmb_Estados.Items[i].ToString())
                     {
@@ -498,16 +501,16 @@ namespace CursoWindowsForms
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
-                //var ListaBusca = C.BuscarFicharioTodos("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                //var ListaBusca = C.BuscarFicharioTodos("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                 //var ListaBusca = C.BuscarFicharioDBTodosDB("Cliente");
-                //var ListaBusca = C.BuscarFicharioSQLTodosSQLServer("Cliente");
+                //var ListaBusca = C.BuscarFicharioDBTodosSQL("Cliente");
                 var ListaBusca = C.BuscarFicharioDBTodosSQLREL();
                 Frm_Busca FForm = new Frm_Busca(ListaBusca);
                 FForm.ShowDialog();
                 if (FForm.DialogResult == DialogResult.OK)
                 {
                     var idSelect = FForm.idSelect;
-                    //C = C.BuscarFichario(idSelect, "C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+                    //C = C.BuscarFichario(idSelect, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
                     //C = C.BuscarFicharioDB(idSelect, "Cliente");
                     //C = C.BuscarFicharioSQL(idSelect, "Cliente");
                     C = C.BuscarFicharioSQLREL(idSelect);
@@ -526,7 +529,7 @@ namespace CursoWindowsForms
                 MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //Fichario F = new Fichario("C:\\Users\\andre\\source\\repos\\andrehaeberlin\\Alura-WindowsFormCSharp\\Fichario");
+            //Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
             //if (F.status)
             //{
             //    List<string> List = new List<string>();
@@ -572,7 +575,7 @@ namespace CursoWindowsForms
                 //var ListaBusca = C.BuscarFicharioDBTodosSQL("Cliente");
                 var ListaBusca = C.BuscarFicharioDBTodosSQLREL();
                 Dg_Clientes.Rows.Clear();
-                for (int i = 0; i <= ListaBusca.Count - 1; i++)
+                for (int i = 0; i <= ListaBusca.Count -1; i++)
                 {
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(Dg_Clientes);
@@ -580,7 +583,7 @@ namespace CursoWindowsForms
                     row.Cells[1].Value = ListaBusca[i][1].ToString();
                     Dg_Clientes.Rows.Add(row);
                 }
-
+                
             }
             catch (Exception Ex)
             {
@@ -616,4 +619,5 @@ namespace CursoWindowsForms
             }
         }
     }
+
 }

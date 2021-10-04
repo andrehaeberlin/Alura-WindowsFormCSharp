@@ -1,5 +1,4 @@
-﻿
-namespace CursoWindowsForms
+﻿namespace CursoWindowsForms
 {
     partial class Frm_Agencia
     {
@@ -31,7 +30,7 @@ namespace CursoWindowsForms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Agencia));
-            this.Tls_Agencia = new System.Windows.Forms.ToolStrip();
+            this.Tls_Principal = new System.Windows.Forms.ToolStrip();
             this.ApagatoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.byteBankDataSet = new CursoWindowsForms.ByteBankDataSet();
             this.tB_AgenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,7 +52,7 @@ namespace CursoWindowsForms
             this.tB_AgenciaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tls_Agencia.SuspendLayout();
+            this.Tls_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.byteBankDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tB_AgenciaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tB_AgenciaBindingNavigator)).BeginInit();
@@ -61,15 +60,15 @@ namespace CursoWindowsForms
             ((System.ComponentModel.ISupportInitialize)(this.tB_AgenciaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // Tls_Agencia
+            // Tls_Principal
             // 
-            this.Tls_Agencia.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Tls_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ApagatoolStripButton});
-            this.Tls_Agencia.Location = new System.Drawing.Point(0, 0);
-            this.Tls_Agencia.Name = "Tls_Agencia";
-            this.Tls_Agencia.Size = new System.Drawing.Size(480, 25);
-            this.Tls_Agencia.TabIndex = 57;
-            this.Tls_Agencia.Text = "toolStrip1";
+            this.Tls_Principal.Location = new System.Drawing.Point(0, 0);
+            this.Tls_Principal.Name = "Tls_Principal";
+            this.Tls_Principal.Size = new System.Drawing.Size(486, 25);
+            this.Tls_Principal.TabIndex = 57;
+            this.Tls_Principal.Text = "toolStrip1";
             // 
             // ApagatoolStripButton
             // 
@@ -98,7 +97,6 @@ namespace CursoWindowsForms
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClienteTableAdapter = null;
             this.tableAdapterManager.TB_AgenciaTableAdapter = this.tB_AgenciaTableAdapter;
             this.tableAdapterManager.TB_ClienteTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = CursoWindowsForms.ByteBankDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -129,7 +127,7 @@ namespace CursoWindowsForms
             this.tB_AgenciaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tB_AgenciaBindingNavigator.Name = "tB_AgenciaBindingNavigator";
             this.tB_AgenciaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tB_AgenciaBindingNavigator.Size = new System.Drawing.Size(480, 25);
+            this.tB_AgenciaBindingNavigator.Size = new System.Drawing.Size(486, 25);
             this.tB_AgenciaBindingNavigator.TabIndex = 58;
             this.tB_AgenciaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -140,7 +138,7 @@ namespace CursoWindowsForms
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -149,7 +147,7 @@ namespace CursoWindowsForms
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
@@ -158,19 +156,19 @@ namespace CursoWindowsForms
             // 
             // bindingNavigatorPositionItem
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 15);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
             // bindingNavigatorSeparator1
             // 
@@ -184,7 +182,7 @@ namespace CursoWindowsForms
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -193,7 +191,7 @@ namespace CursoWindowsForms
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
@@ -207,7 +205,7 @@ namespace CursoWindowsForms
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -216,7 +214,7 @@ namespace CursoWindowsForms
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // tB_AgenciaBindingNavigatorSaveItem
             // 
@@ -224,7 +222,7 @@ namespace CursoWindowsForms
             this.tB_AgenciaBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tB_AgenciaBindingNavigatorSaveItem.Image")));
             this.tB_AgenciaBindingNavigatorSaveItem.Name = "tB_AgenciaBindingNavigatorSaveItem";
             this.tB_AgenciaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-            this.tB_AgenciaBindingNavigatorSaveItem.Text = "Save Data";
+            this.tB_AgenciaBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.tB_AgenciaBindingNavigatorSaveItem.Click += new System.EventHandler(this.tB_AgenciaBindingNavigatorSaveItem_Click);
             // 
             // tB_AgenciaDataGridView
@@ -235,44 +233,44 @@ namespace CursoWindowsForms
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.tB_AgenciaDataGridView.DataSource = this.tB_AgenciaBindingSource;
-            this.tB_AgenciaDataGridView.Location = new System.Drawing.Point(12, 75);
+            this.tB_AgenciaDataGridView.Location = new System.Drawing.Point(12, 66);
             this.tB_AgenciaDataGridView.Name = "tB_AgenciaDataGridView";
-            this.tB_AgenciaDataGridView.Size = new System.Drawing.Size(456, 220);
+            this.tB_AgenciaDataGridView.Size = new System.Drawing.Size(462, 319);
             this.tB_AgenciaDataGridView.TabIndex = 58;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Agencia";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Agencia";
-            this.dataGridViewTextBoxColumn1.MaxInputLength = 4;
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn1.FillWeight = 150F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Código da Agência";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.FillWeight = 300F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.FillWeight = 280F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome da Agência";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 300;
+            this.dataGridViewTextBoxColumn2.Width = 250;
             // 
             // Frm_Agencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 320);
+            this.ClientSize = new System.Drawing.Size(486, 397);
             this.Controls.Add(this.tB_AgenciaDataGridView);
             this.Controls.Add(this.tB_AgenciaBindingNavigator);
-            this.Controls.Add(this.Tls_Agencia);
+            this.Controls.Add(this.Tls_Principal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Agencia";
-            this.Text = "Frm_Agencia";
+            this.Text = "Frm_Busca";
             this.Load += new System.EventHandler(this.Frm_Agencia_Load);
-            this.Tls_Agencia.ResumeLayout(false);
-            this.Tls_Agencia.PerformLayout();
+            this.Tls_Principal.ResumeLayout(false);
+            this.Tls_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.byteBankDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tB_AgenciaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tB_AgenciaBindingNavigator)).EndInit();
@@ -286,7 +284,7 @@ namespace CursoWindowsForms
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip Tls_Agencia;
+        private System.Windows.Forms.ToolStrip Tls_Principal;
         private System.Windows.Forms.ToolStripButton ApagatoolStripButton;
         private ByteBankDataSet byteBankDataSet;
         private System.Windows.Forms.BindingSource tB_AgenciaBindingSource;

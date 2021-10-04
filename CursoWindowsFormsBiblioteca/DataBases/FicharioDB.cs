@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +8,6 @@ namespace CursoWindowsFormsBiblioteca.Databases
 {
     public class FicharioDB
     {
-
         public string mensagem;
         public bool status;
         public string tabela;
@@ -23,16 +20,12 @@ namespace CursoWindowsFormsBiblioteca.Databases
             {
                 db = new LocalDBClass();
                 tabela = Tabela;
-                mensagem = "Conexão com a Tabela criada com sucesso.";
-
+                mensagem = "Conexão com a Tabela criada com sucesso";
             }
             catch (Exception ex)
             {
-
                 status = false;
-                mensagem = "Conexão com a Tabela com erro: " + ex.Message;
-
-                throw new Exception(ex.Message);
+                mensagem  = "Conexão com a Tabela com erro: " + ex.Message;
             }
         }
 
@@ -41,21 +34,18 @@ namespace CursoWindowsFormsBiblioteca.Databases
             status = true;
             try
             {
+                // INSERT INTO CLIENTE (ID, JSON) VALUES ('000001','{...}')
 
-                // INSERT INTO CLIENTE (ID, JSON) VALUES ('000001', '{...}')
-
-                var SQL = "INSERT INTO " + tabela + "(Id, JSON) VALUES('" + Id + "', '" + jsonUnit + "')";
+                var SQL = "INSERT INTO " + tabela + " (Id, JSON) VALUES ('" + Id + "', '" + jsonUnit + "')";
                 db.SQLCommand(SQL);
-                mensagem = "Inclusão efetuada com sucesso.";
+                status = true;
+                mensagem = "Inclusão efetuada com sucesso. Identificador: " + Id;
 
             }
             catch (Exception ex)
             {
-
                 status = false;
-                mensagem = "Conexão com a Tabela com erro: " + ex.Message;
-
-                throw new Exception(ex.Message);
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
             }
         }
 
@@ -64,44 +54,41 @@ namespace CursoWindowsFormsBiblioteca.Databases
             status = true;
             try
             {
+                // SELECT ID, JSON FROM CLIENTE WHERE ID = '000010'
 
-                // SELECT ID, JSON FROM CLIENTE WHERE ID =  '000001'
                 var SQL = "SELECT Id, JSON FROM " + tabela + " WHERE ID = '" + Id + "'";
                 var dt = db.SQLQuery(SQL);
                 if (dt.Rows.Count > 0)
                 {
                     string conteudo = dt.Rows[0]["JSON"].ToString();
                     status = true;
-                    mensagem = "Busca efetuada com sucesso. Identificador: " + Id;
+                    mensagem = "Inclusão efetuada com sucesso. Identificador: " + Id;
                     return conteudo;
                 }
                 else
                 {
                     status = false;
                     mensagem = "Identificador não existente: " + Id;
-                    return string.Empty;
                 }
-            }
 
+            }
             catch (Exception ex)
             {
-
                 status = false;
-                mensagem = "Conexão com a Tabela com erro: " + ex.Message;
-
-                throw new Exception(ex.Message);
+                mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
             }
+            return "";
         }
 
         public List<string> BuscarTodos()
         {
             status = true;
             List<string> List = new List<string>();
-
             try
             {
-                // SELECT ID, JSON FROM CLIENTE WHERE ID =  '000001'
-                var SQL = "SELECT Id, JSON FROM " + tabela;
+                // SELECT ID, JSON FROM CLIENTE'
+
+                var SQL = "SELECT Id, JSON FROM " + tabela ;
                 var dt = db.SQLQuery(SQL);
                 if (dt.Rows.Count > 0)
                 {
@@ -109,24 +96,21 @@ namespace CursoWindowsFormsBiblioteca.Databases
                     {
                         string conteudo = dt.Rows[i]["JSON"].ToString();
                         List.Add(conteudo);
-                    }                    
+                    }
+                    return List;
                 }
                 else
                 {
                     status = false;
-                    mensagem = "Usuários não encontrados";
-                    List =  null;
+                    mensagem = "Não existem clientes na base de dados";
                 }
-
-                return List;
             }
             catch (Exception ex)
             {
                 status = false;
-                mensagem = "Conexão com a Tabela com erro: " + ex.Message;
-
-                throw new Exception(ex.Message);
+                mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
             }
+            return List;
         }
 
         public void Apagar(string Id)
@@ -134,52 +118,17 @@ namespace CursoWindowsFormsBiblioteca.Databases
             status = true;
             try
             {
-
-                // SELECT ID, JSON FROM CLIENTE WHERE ID =  '000001'
                 var SQL = "SELECT Id, JSON FROM " + tabela + " WHERE ID = '" + Id + "'";
                 var dt = db.SQLQuery(SQL);
                 if (dt.Rows.Count > 0)
                 {
-                    //DELETE FROM CLIENTE WHERE ID =  '000001'
+
+                    // DELETE FROM CLIENTE WHERE ID = '00010'
+
                     SQL = "DELETE FROM " + tabela + " WHERE ID = '" + Id + "'";
                     db.SQLCommand(SQL);
                     status = true;
-                    mensagem = "Usuário apagado com sucesso. Identificador: " + Id;                    
-                }
-                else
-                {
-                    status = false;
-                    mensagem = "Identificador não existente: " + Id;                    
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                status = false;
-                mensagem = "Conexão com a Tabela com erro: " + ex.Message;
-
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public void Alterar(string Id, string jsonUnit)
-        {
-
-            status = true;
-            try
-            {
-
-                // SELECT ID, JSON FROM CLIENTE WHERE ID =  '000001'
-                var SQL = "SELECT Id, JSON FROM " + tabela + " WHERE ID = '" + Id + "'";
-                var dt = db.SQLQuery(SQL);
-                if (dt.Rows.Count > 0)
-                {
-                    //UPDATE CLIENTE SET JSON = '{...}' WHERE ID =  '000001'
-                    SQL = "UPDATE " + tabela + " SET JSON = '" + jsonUnit + "' WHERE ID = '" + Id + "'";
-                    db.SQLCommand(SQL);
-                    status = true;
-                    mensagem = "Usuário alterado com sucesso. Identificador: " + Id;
+                    mensagem = "Inclusão efetuada com sucesso. Identificador: " + Id;
                 }
                 else
                 {
@@ -187,17 +136,44 @@ namespace CursoWindowsFormsBiblioteca.Databases
                     mensagem = "Identificador não existente: " + Id;
                 }
             }
-
             catch (Exception ex)
             {
-
                 status = false;
-                mensagem = "Conexão com a Tabela com erro: " + ex.Message;
+                mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
+            }
+        }
 
-                throw new Exception(ex.Message);
+        public void Alterar(string Id, string jsonUnit)
+        {
+            status = true;
+            try
+            {
+
+                var SQL = "SELECT Id, JSON FROM " + tabela + " WHERE ID = '" + Id + "'";
+                var dt = db.SQLQuery(SQL);
+                if (dt.Rows.Count > 0)
+                {
+
+                    // UPDATE CLIENTE SET JSON = '{...}' WHERE ID = '00010'
+
+                    SQL = "UPDATE " + tabela + " SET JSON = '" + jsonUnit + "' WHERE ID = '" + Id + "'";
+                    db.SQLCommand(SQL);
+                    status = true;
+                    mensagem = "Alteração efetuada com sucesso. Identificador: " + Id;
+                }
+                else
+                {
+                    status = false;
+                    mensagem = "Alteração não permitida porque o identificador não existe: " + Id;
+                }
+                               
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
             }
 
         }
     }
-
 }

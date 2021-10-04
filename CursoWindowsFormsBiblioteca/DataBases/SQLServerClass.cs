@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 
 namespace CursoWindowsFormsBiblioteca.Databases
 {
@@ -18,14 +18,13 @@ namespace CursoWindowsFormsBiblioteca.Databases
         {
             try
             {
+                // stringConn = "Data Source=DESKTOP-NFOOQC1;Initial Catalog=ByteBank;Persist Security Info=True;User ID=sa;Password=8ii";
                 stringConn = ConfigurationManager.ConnectionStrings["Fichario"].ConnectionString;
-                //stringConn = "Data Source=DESKTOP-LNCDRN7;Initial Catalog=ByteBank;Integrated Security=True";
                 connDB = new SqlConnection(stringConn);
                 connDB.Open();
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }
@@ -35,18 +34,15 @@ namespace CursoWindowsFormsBiblioteca.Databases
             DataTable dt = new DataTable();
             try
             {
-
-                SqlCommand myCommand = new SqlCommand(SQL, connDB);
+                var myCommand = new SqlCommand(SQL, connDB);
                 myCommand.CommandTimeout = 0;
                 var myReader = myCommand.ExecuteReader();
                 dt.Load(myReader);
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
-
             return dt;
         }
 
@@ -54,7 +50,6 @@ namespace CursoWindowsFormsBiblioteca.Databases
         {
             try
             {
-
                 var myCommand = new SqlCommand(SQL, connDB);
                 myCommand.CommandTimeout = 0;
                 var myReader = myCommand.ExecuteReader();
@@ -62,7 +57,6 @@ namespace CursoWindowsFormsBiblioteca.Databases
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }

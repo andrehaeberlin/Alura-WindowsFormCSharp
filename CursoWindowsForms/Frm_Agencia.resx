@@ -117,23 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Tls_Agencia.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="Tls_Principal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="byteBankDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
+    <value>135, 17</value>
   </metadata>
   <metadata name="tB_AgenciaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>277, 17</value>
+    <value>280, 17</value>
   </metadata>
   <metadata name="tB_AgenciaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>467, 17</value>
+    <value>17, 56</value>
   </metadata>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>652, 17</value>
+    <value>202, 56</value>
   </metadata>
   <metadata name="tB_AgenciaBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>823, 17</value>
+    <value>373, 56</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorAddNewItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -206,6 +206,30 @@
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVDhPY6AK+Pbt239SMVQrBIAFgufA8Yf3H+EYWQxE
         x0zYh2kIKQaAMMwQqHbSDQBhog1AxshqaGsAMXjUgEFpADkYqp0SwMAAAPRDDFPA2mtzAAAAAElFTkSu
         QmCC
+</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAHYAAAB2AAAAAAAAAAAA
+        AAAiHRuXNDAquywnJMQAAABbAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAPjgz15qMgf9vZFv/R0tO/y87Qc9EVF7ARFRewERUXsBEVF7ARFRewEJUXcAhKy9sAAAAAAAA
+        AAAAAAAAAAAAAEI7N+Cgkoj/eG1m/2dsb/+Fp7v/st/6/7Lf+v+y3/r/st/6/7Lf+v+y3/r/co6g6yQr
+        MHAAAAAAAAAAAAAAAABCOzfgoJKI/3htZv9ucnP/YnqJ/6jT7P+y3/r/st/6/42xxv+DpLf/g6S3/4ao
+        vP9siJjsJCswcAAAAAAAAAAAODIv5HVrZP9YUEv/OTs86AAAAFwrNz3Dn8ff/Ze+1f8LDQ++AAAAgwAA
+        AEUMDg5YSFlk3G2ImOsgKS5vAAAAAAAAACoAAABEAAAARAAAAAgAAAAAAAAAByQuNLJ4l6n6XnWD/0ha
+        Zf0fKCy0AAAAAA8UGTNDVV/cP1BZ8yUuMG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAPwAA
+        AEQAAABEAAAAPQAAAAAAAAAAAAAAHgAAAEQAAAAsAAAAAAAAAAAWKhuXIkMsuyJDLLsiQyy7IkMsuyJD
+        LLsiQyy7IkMsuyJDLLsiQyy7IkMsuyJDLLsiQyy7FioblwAAAAAdLyOXHTYl2i9ePf8uXDz/Llw8/0SH
+        Wf8/elH/MVc+/zFXPf8/elH/RIdZ/y5cPP8uXDz/L149/x89KMAAAAAqJDgpyDFUO+AqVTf/PXdP/y9Y
+        PP9LlmP/QWxO/yZFL/8WKRv/QWxO/0uWY/8vWDz/PXdP/ypVN/8fPSjAGjMhyCZFL+QxVDvgKlU3/ypM
+        NP8pRTL/OnRM/1aMZv8WKBv/JUIt/1aLZv86dEz/KUUy/ypMNP8qVTf/Hz0owB89KMAsUTfgMVQ74CRJ
+        L/9BgVT/QYFU/02ZZf8tUTn/OWFE/zhhRP8tUTj/TZll/0GBVP9BgVT/JEkv/x89KMAfPSjALFE34CtI
+        MuQ2bUj/MF8+/zBfPv85ckv/QIBU/ytSN/8rUzf/QIBU/zlyS/8wXz7/MF8+/zZtSP8aMyHIHz0owCZF
+        L+RIdFX/O19G/ztfRv87X0b/O19G/ztfRv87X0b/O19G/ztfRv87X0b/O19G/ztfRv8WIxrZAAAAKh89
+        KMBMmWT/Q4ZY/0OGWP9Dhlj/Q4ZY/0OGWP9Dhlj/Q4ZY/0OGWP9Dhlj/Q4ZY/0OGWP8VKRvRAAAAKgAA
+        AAAWKhuXIkMsuyJDLLsiQyy7IkMsuyJDLLsiQyy7IkMsuyJDLLsiQyy7IkMsuyJDLLsiQyy7FioblwAA
+        AAAAAAAAB/8AAAAPAAAABwAAAAMAAAABAAAIEAAA/BgAAMAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAQAAAAMAAA==
 </value>
   </data>
 </root>
